@@ -1,4 +1,4 @@
-const mapWithCb = require('./mapWithCb');
+const mapWithCb = require('../mapWithCb/mapWithCb');
 
 test('calls the callback with each element of the array', () => {
   const mockCallback = jest.fn((x) => x * 2);

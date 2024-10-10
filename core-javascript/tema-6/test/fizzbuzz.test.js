@@ -1,4 +1,4 @@
-const fizzBuzz = require('./fizzbuzz');
+const fizzBuzz = require('../ejercicio_fizzBuzz/fizzbuzz');
 
 test('returns fizz for multiples of 3', () => {
   expect(fizzBuzz(3)).toBe('fizz');
