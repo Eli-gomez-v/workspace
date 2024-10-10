@@ -5,7 +5,8 @@
       "msjsdiag.debugger-for-chrome",
       "orta.vscode-jest",
       "cypress.snippets",
-      "prettier.prettier"
+      "prettier.prettier",
+      "easycodeai.chatgpt-gpt4-gpt3-vscode"
 
     ]
   }

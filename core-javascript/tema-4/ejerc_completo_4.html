@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 3 completo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicios 4 Completo</h1>
+
+    <div>
+        <button onclick="ejercicio1_1()">Los números del 1-100</button>
+        <button onclick="ejercicio1_2()">Sólo los pares del 1-100</button>
+        <button onclick="ejercicio1_3()">Los múltiplos de 20 hasta mil</button>
+        <button onclick="ejercicio1_4()">Dibuja un cuadrado</button>
+        <button onclick="ejercicio1_5()">Dibuja un rombo</button>
+        <button onclick="ejercicio1_6()">Tabla de multiplicar del 0-9</button>
+        <button onclick="ejercicio1_7()">Página en bucle</button>
+        <button onclick="ejercicio1_8()">Pregunta por un número</button>
+        <button onclick="ejercicio1_9()">Elige un número</button>
+        <button onclick="ejercicio1_10()">Escribe aquí</button>
+        <button onclick="ejercicio1_11()">Dame un número entero</button>
+        <button onclick="ejercicio1_12()">Escribe y lee del revés</button>
+        <button onclick="ejercicio1_13()">Escribe un mensaje y luego salir</button>
+    </div>
+
+    <div id="output">
+        <!-- Aquí se mostrarán los resultados de los ejercicios -->
+    </div>
+
+    <script>
+        // Imprimir los números del 1 al 100
+        
+        function ejercicio1_1() {
+            let output = document.getElementById('output');
+            output.innerHTML = '';
+            for (let i = 1; i <= 100; i++) {
+                output.innerHTML += i + '<br>';
+            }
+        }
+
+        //Imprimir los números pares del 1 al 100 en log de consola
+
+        function ejercicio1_2() {
+            let output = document.getElementById('output');
+            output.innerHTML = '';
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 === 0) {
+                    output.innerHTML += i + '<br>';
+                }
+            }
+        }
+
+        // Imprimir sólo los números múltiplos de 20 del 1 al 1000 por pantalla
+
+        function ejercicio1_3() {
+            let output = document.getElementById('output');
+            output.innerHTML = '';
+            for (let i = 20; i <= 1000; i += 20) {
+                output.innerHTML += i + '<br>';
+            }
+        }
+
+        // Dibujar un cuadrado por pantalla
+
+        function ejercicio1_4() {
+            let output = document.getElementById('output');
+            let size = 5; // Tamaño del cuadrado
+            output.innerHTML = '';
+            for (let i = 0; i < size; i++) {
+                let line = '';
+                for (let j = 0; j < size; j++) {
+                    line += '* ';
+                }
+                output.innerHTML += line + '<br>';
+            }
+        }
+
+        // Dibujar un rombo por pantalla
+
+        function ejercicio1_5() {
+            let output = document.getElementById('output');
+            let size = 5; // Tamaño del rombo
+            output.innerHTML = '';
+            // Parte superior del rombo
+            for (let i = 1; i <= size; i++) {
+                let line = '&nbsp;'.repeat(size - i) + '* '.repeat(i);
+                output.innerHTML += line + '<br>';
+            }
+            // Parte inferior del rombo
+            for (let i = size - 1; i >= 1; i--) {
+                let line = '&nbsp;'.repeat(size - i) + '* '.repeat(i);
+                output.innerHTML += line + '<br>';
+            }
+        }
+
+        // Imprimir por pantalla las tablas de multiplicar del 0 al 9
+
+        function ejercicio1_6() {
+            let output = document.getElementById('output');
+            output.innerHTML = '';
+            for (let i = 0; i <= 9; i++) {
+                for (let j = 0; j <= 10; j++) {
+                    output.innerHTML += `${i} x ${j} = ${i * j}<br>`;
+                }
+                output.innerHTML += '<br>';
+            }
+        }
+
+        function ejercicio1_7() {
+            let output = document.getElementById('output');
+            let keepAsking = true;
+            while (keepAsking) {
+                let num = parseInt(prompt("Introduce un número para multiplicar"));
+                let mult = parseInt(prompt(`¿Por cuánto quieres multiplicar ${num}?`));
+                alert(`${num} x ${mult} = ${num * mult}`);
+                keepAsking = confirm("¿Quieres hacer otra multiplicación?");
+            }
+            output.innerHTML = "Multiplicaciones completadas.";
+        }
+
+        // Preguntar un número por input, después, imprimir todos los números impares hasta él
+
+        function ejercicio1_8() {
+            let output = document.getElementById('output');
+            let num = parseInt(prompt("Introduce un número:"));
+            output.innerHTML = '';
+            for (let i = 1; i <= num; i++) {
+                if (i % 2 !== 0) {
+                    output.innerHTML += i + '<br>';
+                }
+            }
+        }
+
+        // Preguntar un número de números a introducir, después, preguntar por esos números, por último, sacar por pantalla la suma de los mismos.
+
+        function ejercicio1_9() {
+            let output = document.getElementById('output');
+            let totalNums = parseInt(prompt("¿Cuántos números quieres sumar?"));
+            let suma = 0;
+            for (let i = 0; i < totalNums; i++) {
+                let num = parseInt(prompt("Introduce un número:"));
+                suma += num;
+            }
+            output.innerHTML = `La suma de los números es: ${suma}`;
+        }
+
+        /* Preguntar por pantalla que se introduzca un número o un texto, si
+        es número se buscan todos los divisores del mismo y si es texto se 
+        escribe cada uno de los caracteres en un salto de línea*/
+
+        function ejercicio1_10() {
+            let output = document.getElementById('output');
+            let input = prompt("Introduce un número o un texto:");
+            output.innerHTML = '';
+            if (!isNaN(input)) {
+                let num = parseInt(input);
+                output.innerHTML += `Divisores de ${num}: `;
+                for (let i = 1; i <= num; i++) {
+                    if (num % i === 0) {
+                        output.innerHTML += i + ' ';
+                    }
+                }
+            } else {
+                output.innerHTML += "Los caracteres del texto son: <br>";
+                for (let char of input) {
+                    output.innerHTML += char + '<br>';
+                }
+            }
+        }
+
+        // Preguntar por pantalla un número entero y que se imprima por pantalla un triángulo
+
+        function ejercicio1_11() {
+            let output = document.getElementById('output');
+            let num = parseInt(prompt("Introduce un número entero:"));
+            output.innerHTML = '';
+            for (let i = 1; i <= num; i += 2) {
+                let line = '';
+                for (let j = i; j >= 1; j -= 2) {
+                    line += j + ' ';
+                }
+                output.innerHTML += line + '<br>';
+            }
+        }
+
+        /* Preguntar al usuario que escriba un texto, después que lo muestre
+de manera invertida (al revés) */
+
+        function ejercicio1_12() {
+            let output = document.getElementById('output');
+            let text = prompt("Introduce un texto:");
+            output.innerHTML = `Texto invertido: ${text.split('').reverse().join('')}`;
+        }
+
+        /*Escribir un programa que muestre el eco de todo lo que el usuario
+introduzca hasta que el usuario escriba “salir” que terminará*/
+
+        function ejercicio1_13() {
+            let output = document.getElementById('output');
+            let input;
+            do {
+                input = prompt("Introduce algo para hacer eco (escribe 'salir' para terminar):");
+                if (input.toLowerCase() !== 'salir') {
+                    output.innerHTML += input + '<br>';
+                }
+            } while (input.toLowerCase() !== 'salir');
+        }
+    </script>
+
+</body>
+</html>

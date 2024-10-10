@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Dígitos en un Número</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        #resultadoBoton {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            display: none; /* Oculto inicialmente */
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contar Dígitos en un Número</h1>
+
+    <label for="numero">Introduce un número:</label>
+    <input type="text" id="numero" placeholder="Ej: 123333"><br>
+
+    <label for="digito">Introduce un dígito a buscar:</label>
+    <input type="text" id="digito" placeholder="Ej: 3"><br>
+
+    <!-- Botón para contar el dígito en el número -->
+    <button onclick="contarDigito()">Contar Dígito</button>
+
+    <!-- Botón donde se mostrará el resultado -->
+    <button id="resultadoBoton"></button>
+
+    <script src="contar_digito.js"></script>
+    <script>
+        function contarDigito() {
+            const numero = document.getElementById('numero').value;
+            const digito = document.getElementById('digito').value;
+
+            if (numero === '' || digito === '') {
+                alert('Por favor, introduce un número y un dígito válidos.');
+                return;
+            }
+
+            // Convertimos el número y el dígito a enteros
+            const resultado = contarDigitoEnNumero(parseInt(numero), parseInt(digito));
+            
+            // Mostrar el botón con el resultado
+            const resultadoBoton = document.getElementById('resultadoBoton');
+            resultadoBoton.innerText = `El dígito ${digito} aparece ${resultado} veces en el número ${numero}.`;
+            resultadoBoton.style.display = 'inline-block';  // Mostramos el botón
+        }
+
+        // Función que cuenta las veces que aparece un dígito en un número
+        function contarDigitoEnNumero(numero, digito) {
+            const strNumero = numero.toString();
+            const strDigito = digito.toString();
+            let contador = 0;
+
+            for (let i = 0; i < strNumero.length; i++) {
+                if (strNumero[i] === strDigito) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+    </script>
+</body>
+</html>

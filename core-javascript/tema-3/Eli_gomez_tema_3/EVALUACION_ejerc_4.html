@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Rueda y Grosor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            background-color: #2d3436;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        label {
+            font-size: 18px;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0984e3;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #74b9ff;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #dfe6e9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            color: #2d3436;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora de Rueda y Grosor</h1>
+
+    <div class="container">
+        <label for="diametro">Introduce el diámetro de la rueda (en metros):</label>
+        <input type="number" id="diametro" placeholder="Ej. 1.2">
+
+        <label for="grosor">Introduce el grosor de la rueda (en metros):</label>
+        <input type="number" id="grosor" placeholder="Ej. 0.3">
+
+        <button onclick="calcularRueda()">Calcular</button>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function calcularRueda() {
+            let diametro = parseFloat(document.getElementById("diametro").value);
+            let grosor = parseFloat(document.getElementById("grosor").value);
+            let resultado = "";
+
+            if (isNaN(diametro) || isNaN(grosor)) {
+                resultado = "Por favor, introduce valores numéricos válidos.";
+            } else {
+                // Condicional para el diámetro
+                if (diametro > 1.4) {
+                    resultado = "La rueda es para un vehículo grande.";
+                    if (grosor < 0.4) {
+                        resultado += " El grosor para esta rueda es inferior al recomendado.";
+                    }
+                } else if (diametro > 0.8) {
+                    resultado = "La rueda es para un vehículo mediano.";
+                    if (grosor < 0.25) {
+                        resultado += " El grosor para esta rueda es inferior al recomendado.";
+                    }
+                } else {
+                    resultado = "La rueda es para un vehículo pequeño.";
+                }
+            }
+
+            // Mostrar resultado
+            document.getElementById("output").innerText = resultado;
+        }
+    </script>
+
+</body>
+</html>
