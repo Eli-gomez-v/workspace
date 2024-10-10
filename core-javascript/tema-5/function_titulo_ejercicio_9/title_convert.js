@@ -1,6 +1,7 @@
 // Write function title() return text on first capital rest tolowercase.
 // Letting unuseful the rest caracteres on the text.
-// using "" it's pre condition.
+// using "" it's pre condition. 
+// no eslin no-undef.
 function titleCase() {
   const words = text.split('');
   let result = '';
