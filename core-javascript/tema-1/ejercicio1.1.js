@@ -1,5 +1,7 @@
 // Declara una variable normal y una constante
-let variableNormal = "Hola Mundo";
+const variableNormal = 'Hola Mundo';
+// eslint-disable-next-line no-console
+console.log(variableNormal);
 const constante = 3.14;
-console.log(variableNormal);;
+// eslint-disable-next-line no-console
 console.log(constante);
