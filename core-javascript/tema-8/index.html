@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Transformer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        h3 {
+            margin-top: 20px;
+        }
+        .result {
+            padding: 10px;
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+        }
+        .instructions {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>String Transformer</h1>
+
+    <label for="inputString">Enter a string (e.g., "This is an example string"):</label>
+    <input type="text" id="inputString" placeholder="Type your string here..." />
+
+    <p class="instructions">Click the buttons below to see different transformations of the string you entered:</p>
+
+    <!-- First Table of Buttons -->
+    <table>
+        <tr>
+            <td><button onclick="showTitle()">Title Case</button></td>
+            <td><button onclick="showCharArray()">Character Array</button></td>
+            <td><button onclick="showRandomOrder()">Random Order</button></td>
+            <td><button onclick="showReversed()">Reversed</button></td>
+        </tr>
+        <tr>
+            <td><p class="instructions">Title Case: Converts the first letter of each word to uppercase.</p></td>
+            <td><p class="instructions">Character Array: Splits the string into an array of characters.</p></td>
+            <td><p class="instructions">Random Order: Randomly shuffles the characters.</p></td>
+            <td><p class="instructions">Reversed: Reverses the order of characters.</p></td>
+        </tr>
+    </table>
+
+    <!-- Second Table of Buttons -->
+    <table>
+        <tr>
+            <td><button onclick="showRemoveVowels()">Remove Vowels</button></td>
+            <td><button onclick="showRemoveConsonants()">Remove Consonants</button></td>
+            <td><button onclick="showWordArray()">Word Array</button></td>
+            <td><button onclick="showInvertedWords()">Inverted Word Order</button></td>
+        </tr>
+        <tr>
+            <td><p class="instructions">Remove Vowels: Removes all vowels from the string.</p></td>
+            <td><p class="instructions">Remove Consonants: Removes all consonants from the string.</p></td>
+            <td><p class="instructions">Word Array: Splits the string into an array of words.</p></td>
+            <td><p class="instructions">Inverted Words: Reverses the order of words.</p></td>
+        </tr>
+    </table>
+    <h3>Results:</h3>
+    <div class="result" id="result">The result will appear here.</div>
+
+    <script>
+        // Function to capitalize the first letter of each word
+        function title(inputString) {
+            return inputString
+                .split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                .join(' ');
+        }
+
+        // Class for various string transformations
+        class StringTransformer {
+            constructor(initialString) {
+                this.initialString = initialString;
+            }
+
+            toCharArray() {
+                return Array.from(this.initialString);
+            }
+
+            randomOrder() {
+                return this.toCharArray()
+                    .sort(() => Math.random() - 0.5)
+                    .join('');
+            }
+
+            reverseOrder() {
+                return [...this.initialString].reverse().join('');
+            }
+
+            removeVowels() {
+                return this.initialString.replace(/[aeiouAEIOU]/g, '');
+            }
+
+            removeConsonants() {
+                return this.initialString.replace(/[^aeiouAEIOU\s]/g, '');
+            }
+
+            toWordArray() {
+                return this.initialString.trim().split(/\s+/);
+            }
+
+            invertWordOrder() {
+                return this.toWordArray().reverse().join(' ');
+            }
+        }
+
+        // Helper function to display result in the result div
+        function displayResult(result) {
+            document.getElementById('result').textContent = result;
+        }
+
+        // Get the input string and create a transformer instance
+        function getTransformer() {
+            const inputString = document.getElementById('inputString').value;
+            return new StringTransformer(inputString);
+        }
+
+        // Button click handlers for each transformation
+        function showTitle() {
+            const inputString = document.getElementById('inputString').value;
+            const titleResult = title(inputString);
+            displayResult(titleResult);
+        }
+
+        function showCharArray() {
+            const transformer = getTransformer();
+            const charArrayResult = transformer.toCharArray().join(', ');
+            displayResult(charArrayResult);
+        }
+
+        function showRandomOrder() {
+            const transformer = getTransformer();
+            const randomOrderResult = transformer.randomOrder();
+            displayResult(randomOrderResult);
+        }
+
+        function showReversed() {
+            const transformer = getTransformer();
+            const reverseOrderResult = transformer.reverseOrder();
+            displayResult(reverseOrderResult);
+        }
+
+        function showRemoveVowels() {
+            const transformer = getTransformer();
+            const removeVowelsResult = transformer.removeVowels();
+            displayResult(removeVowelsResult);
+        }
+
+        function showRemoveConsonants() {
+            const transformer = getTransformer();
+            const removeConsonantsResult = transformer.removeConsonants();
+            displayResult(removeConsonantsResult);
+        }
+
+        function showWordArray() {
+            const transformer = getTransformer();
+            const wordArrayResult = transformer.toWordArray().join(', ');
+            displayResult(wordArrayResult);
+        }
+
+        function showInvertedWords() {
+            const transformer = getTransformer();
+            const invertWordOrderResult = transformer.invertWordOrder();
+            displayResult(invertWordOrderResult);
+        }
+    </script>
+
+</body>
+</html>
