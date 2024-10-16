@@ -1,10 +1,4 @@
-export const title = inputString =>
-  inputString
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(' ');
-
-export class StringTransformer {
+class StringTransformer {
   constructor(initialString) {
       this.initialString = initialString;
   }
@@ -24,5 +18,7 @@ export class StringTransformer {
 
   toWordArray = () => this.initialString.trim().split(/\s+/);
 
-  invertWordOrder = () => this.toWordArray().reverse().join(' ');
+  invertWordOrder = () => this.initialString.trim().split(/\s+/).reverse().join(' ');
 }
+
+module.exports = { StringTransformer };
