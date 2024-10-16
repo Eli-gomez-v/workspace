@@ -1,10 +1,13 @@
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable padded-blocks */
+/* eslint-disable no-plusplus */
 // multiples.js
 function generateMultiples(size, num) {
   const multiples = [];
-  // eslint-disable-next-line no-plusplus
   for (let i = 1; i <= size; i++) {
+
     multiples.push(i * num);
-    // Push multiples of num to the array
+    
   }
   return multiples;
 }
