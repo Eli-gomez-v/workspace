@@ -1,0 +1,62 @@
+/* Estilos para los links*/ 
+a.autor {
+    color: #ff6347; /* Color Tomato */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a.autor:hover {
+    color: rgb(255, 99, 71); /* Color RGB similar a Tomato */
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* Animaciones */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* Aplicar animaciones a elementos específicos */
+#main-header {
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitulo {
+    animation: slideIn 2s ease-out;
+}
+
+.step {
+    animation: bounceIn 1s;
+}
+
+footer {
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Efectos adicionales */
+.step:hover {
+    background-color: #ffe4b5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
