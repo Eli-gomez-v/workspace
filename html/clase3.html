@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23418.36827185275!2d-1.6469262999999998!3d42.8032299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd50925e361feebb%3A0x5a121c8b41f16174!2sMercadona!5e0!3m2!1ses!2ses!4v1729181163408!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h1>Esto es un encabezado</h1>
+    ol>li:nth-child(even) {
+        background-color: grey;
+    }
+    h3>Corredores a partir del undécimo (11):</h3>
+    <!-- listas ordenadas-->
+    <ol class="mi_lista_ordenada">
+        <li value="20"> Corredores a partir del vigésimo </li>
+        <li> Juanita</li>
+        <li> Pepito </li>
+        <li> Jaimito </li>
+        <li> Nombre </li>
+        <li> Nombre </li>
+        <li> Nombre </li>
+        <li> Nombre </li>
+        <li> Nombre </li>
+    </ol>
+    /* pseudo-elemento marker */
+        ul>li::marker {
+            content: '<h3>Versiones de HTML:</h3>
+    <!-- listas no ordenadas-->
+    <ul class="mi_lista_no_ordenadas">
+        <li type="square"> HTML 1 </li>
+        <li> HTML 2 </li>
+        <li> HTML 3 </li>
+        <li> HTML 4 </li>
+        <li> HTML 5 </li>
+    </ul>
+ ';
+            font-size: 1.1em;
+        }
+
+        ul>li:last-child::marker {
+            content: '✔️ ';
+            font-size: 1.5em;
+        }
+        <h3>Versiones de HTML:</h3>
+    <!-- listas no ordenadas-->
+    <ul class="mi_lista_no_ordenadas"> li ::marker {
+        content: '✔️ ';
+        font-size: 1.5em;
+    }
+    <ul><li:last-child::marker {
+        content: ' ';
+    </ul>
+        <li type="square"> HTML 1 </li>
+        <li> HTML 2 </li>
+        <li> HTML 3 </li>
+        <li> HTML 4 </li>
+        <li> HTML 5 </li>
+    </ul>
+
+
+
+
+
+</body>
+</html>
