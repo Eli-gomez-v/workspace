@@ -1,3 +1,5 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable indent */
 class StringTransformer {
   constructor(initialString) {
       this.initialString = initialString;
