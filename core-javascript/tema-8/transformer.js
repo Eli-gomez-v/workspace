@@ -3,6 +3,8 @@ class StringTransformer {
       this.initialString = initialString;
   }
 
+  transformString = (transformFn) => transformFn(this.initialString);
+
   toCharArray = () => Array.from(this.initialString);
 
   randomOrder = () =>
