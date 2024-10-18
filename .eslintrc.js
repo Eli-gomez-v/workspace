@@ -11,13 +11,9 @@ module.exports = {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
-  rules: {},
   plugins: ['jest'],
-  env: {
-    'jest/globals': true,
-  },
   rules: {
+    'no-console': 'off',
     'import/extensions': ['error', 'ignorePackages', { 'js': 'never' }],
   },
-  plugins: ['jest'],
 };
