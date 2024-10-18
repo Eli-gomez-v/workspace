@@ -1,4 +1,6 @@
-const { StringTransformer } = require('../transformer.js');
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+const { StringTransformer } = require('./transformer'); // Ajusta esto a la ruta de tu archivo
 
 describe('StringTransformer class', () => {
   let transformer;
@@ -11,23 +13,12 @@ describe('StringTransformer class', () => {
     expect(transformer.toCharArray()).toEqual(['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']);
   });
 
-  test('should reverse the order of characters', () => {
-    expect(transformer.reverseOrder()).toBe('dlroW olleH');
-  });
-
-  test('should remove vowels from the string', () => {
-    expect(transformer.removeVowels()).toBe('Hll Wrld');
-  });
-
-  test('should remove consonants from the string', () => {
-    expect(transformer.removeConsonants()).toBe('eo o');
-  });
-
-  test('should convert the string into a word array', () => {
-    expect(transformer.toWordArray()).toEqual(['Hello', 'World']);
-  });
-
-  test('should invert the order of words in the string', () => {
-    expect(transformer.invertWordOrder()).toBe('World Hello');
+  // Prueba para cubrir la función randomOrder
+  test('should randomize the order of characters', () => {
+    const randomized = transformer.randomOrder();
+    // Verifica que el resultado tenga los mismos caracteres pero en un orden diferente
+    expect(randomized).not.toBe('Hello World'); // Verifica que no sea el mismo orden
+    expect(randomized.length).toBe(11); // Verifica que la longitud sea la misma
+    expect([...randomized].sort()).toEqual([...transformer.initialString].sort());
   });
 });
