@@ -22,7 +22,7 @@ export class AppElement extends HTMLElement {
 
   connectedCallback() {
     const title = 'https://virgil.io/'; // These app is a joke, it's a prank search engine to stay focused on your own projects
-    this.innerHTML = `
+    const present = `
     <div class="wrapper">
       <div class="container">
         <!--  WELCOME  -->
@@ -395,7 +395,182 @@ nx affected:e2e</pre>
       </div>
     </div>
       `;
+    const future = `
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js & Nx School</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            padding: 1rem;
+            border-bottom: 1px solid #333;
+        }
+        h1, h2, h3 {
+            color: #0ff;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #aaa;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .card ul {
+            padding-left: 1.5rem;
+            color: #aaa;
+        }
+        .card li::before {
+            content: '▹';
+            color: #0ff;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .button {
+            display: inline-block;
+            background-color: transparent;
+            color: #0ff;
+            border: 1px solid #0ff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0ff;
+            color: #000;
+        }
+        pre {
+            background-color: #111;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #0ff;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Node.js & Nx School</h1>
+    </header>
+    <main class="container">
+        <section class="hero">
+            <h2>Welcome to the Future of Development</h2>
+            <p>Master Node.js and Nx in our cutting-edge digital dojo</p>
+        </section>
+        <section class="grid">
+            <div class="card">
+                <h3>Node.js Mastery</h3>
+                <p>Harness the power of JavaScript on the server</p>
+                <ul>
+                    <li>Asynchronous programming</li>
+                    <li>RESTful API development</li>
+                    <li>Database integration</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Nx Toolkit</h3>
+                <p>Supercharge your development workflow</p>
+                <ul>
+                    <li>Monorepo management</li>
+                    <li>Efficient build system</li>
+                    <li>Scalable architecture</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h3>Featured Lessons</h3>
+            <div class="grid">
+                <div class="card">
+                    <h3>Building a RESTful API</h3>
+                    <a href="#" class="button">Start Lesson</a>
+                </div>
+                <div class="card">
+                    <h3>Nx Workspace Setup</h3>
+                    <a href="#" class="button">Start Lesson</a>
+                </div>
+                <div class="card">
+                    <h3>Advanced Node.js Patterns</h3>
+                    <a href="#" class="button">Start Lesson</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>Pure Node.js API</h3>
+            <div class="card">
+                <h3>Lightweight REST API</h3>
+                <p>No dependencies, just pure Node.js power</p>
+                <pre><code>const http = require('http');
 
+const server = http.createServer((req, res) => {
+  if (req.url === '/api/data' && req.method === 'GET') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ message: 'Welcome to the future' }));
+  } else {
+    res.writeHead(404);
+    res.end();
+  }
+});
+
+server.listen(3000, () => console.log('Server running on port 3000'));</code></pre>
+            </div>
+        </section>
+    </main>
+    <footer>
+        © 2024 Node.js & Nx School. Embrace the future of development.
+    </footer>
+</body>
+</html>
+      `;
+    const isFuture = false;
+    this.innerHTML = isFuture ? future : present;
     setTimeout(() => this.makeHTTPRequest(), 2000);
   }
 }

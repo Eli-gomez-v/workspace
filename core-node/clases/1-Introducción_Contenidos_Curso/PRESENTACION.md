@@ -10,6 +10,11 @@
 
 - Acuerdos de contenido y evaluación de ejercicios con proyecto final obligatorio entregable desde hoy siguiendo las indicaciones del resumen.
 
+A tener en cuenta:
+
+- https://www.youtube.com/watch?v=_Tu49Qi5-oc
+-
+
 ## Presentación del programa
 
 Los módulos a abordar este año son 6 parte una ruta de aprendizaje práctica de 8 pasos, en lugar de un programa teórico, puedes continuar la ruta por tu cuenta, siguiendo la lectura de los archivos markdown y/o seguir con el ritmo de clase(si sigues por tu cuenta y quieres consultar dudas, tendrás que hacerlo en horario de tutorías o fuera de clase):
