@@ -12,7 +12,7 @@
 
 A tener en cuenta:
 
-- https://www.youtube.com/watch?v=_Tu49Qi5-oc
+- [Video de referencia](https://www.youtube.com/watch?v=_Tu49Qi5-oc)
 -
 
 ## Presentación del programa
