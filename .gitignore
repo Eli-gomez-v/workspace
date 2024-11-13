@@ -91,3 +91,50 @@ bower_components/
 
 # Optional stylelint cache
 .stylelintcache
+
+# Ignorar archivos y directorios específicos
+/.apport-ignore.xml
+/.bash_history
+/.bash_history-*.tmp
+/.bash_logout
+/.bashrc
+/.cache/
+/.config/
+/.dotnet/
+/fontconfig/
+/.gitconfig
+/.gk/
+/.gnupg/
+/.js-repl/
+/.lesshst
+/.local/
+/.node_repl_history
+/.npm/
+/.pki/
+/profile
+/.ssh/
+/.sudo_as_admin_successful
+/.texto.txt.swp
+/.viminfo
+/.vscode/
+/.wget-hsts
+/.wine/
+/Descargas/
+/Documentos/
+/Imágenes/
+/AGILE/
+/Apuntes_sobre_javascript/
+/COREJAVASCRIPT/
+/ChatGPT_files/
+/Contenedores/
+/HTML/
+/PROYECTO-NET/
+/TERMINAL Y GIT/
+/certificado/
+/docker/
+/certificado1.pem
+/clave1.pem
+/common-project-back-front/
+/snap/
+/ziKo4IRj
+/.Proyecto_final_HTML_CSS

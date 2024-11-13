@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Transformer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6f61;
+        }
+        textarea, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            margin: 10px 0;
+        }
+        textarea {
+            width: 80%;
+            max-width: 400px;
+            height: 100px;
+        }
+        button {
+            background-color: #ff6f61;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3b3f;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            white-space: pre-wrap; /* Preserve newlines and spaces */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>String Transformer</h1>
+        <textarea id="inputText" placeholder="Ingresa tu texto aquí"></textarea>
+        <br>
+        <button id="runTests">Ejecutar Transformaciones</button>
+        <textarea id="additionalText" placeholder="Ingresa texto adicional"></textarea>
+        <br>
+        <button id="addText">Añadir Texto</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        class StringTransformer {
+            constructor(text = '') {
+                if (typeof text !== 'string') {
+                    throw new Error('Input must be a string');
+                }
+                this.text = text;
+            }
+
+            add(newText) {
+                if (typeof newText !== 'string') {
+                    throw new Error('Input must be a string');
+                }
+                this.text += newText;
+            }
+
+            toCharArray() {
+                return Array.from(this.text);
+            }
+
+            shuffleChars() {
+                return this._shuffleArray(this.toCharArray()).join('');
+            }
+
+            reverseChars() {
+                return this.toCharArray().reverse().join('');
+            }
+
+            removeVowels() {
+                return this.text.replace(/[aeiouAEIOU]/g, '');
+            }
+
+            removeConsonants() {
+                return this.text.replace(/[^aeiouAEIOU\s]/g, '');
+            }
+
+            toWordArray() {
+                if (this.text.trim() === '') return [];
+                return this.text.split(/\s+/); // Maneja múltiples espacios
+            }
+
+            reverseWords() {
+                return this.toWordArray().reverse().join(' ');
+            }
+
+            _shuffleArray(array) {
+                const shuffledArray = array.slice(); 
+                for (let i = shuffledArray.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+                }
+                return shuffledArray;
+            }
+        }
+
+        let transformer = null;
+
+        document.getElementById("runTests").addEventListener("click", function() {
+            let inputText = document.getElementById("inputText").value;
+            if (inputText.trim()) {
+                transformer = new StringTransformer(inputText.trim());
+                displayResults(transformer);
+            } else {
+                alert("Por favor, ingresa un texto válido.");
+            }
+        });
+
+        document.getElementById("addText").addEventListener("click", function() {
+            if (transformer) {
+                let additionalText = document.getElementById("additionalText").value;
+                if (additionalText.trim()) {
+                    transformer.add(additionalText.trim());
+                    displayResults(transformer);
+                } else {
+                    alert("Por favor, ingresa texto adicional válido.");
+                }
+            } else {
+                alert("Primero ingresa el texto inicial.");
+            }
+        });
+
+        function displayResults(transformer) {
+            let resultText = `
+                <p>Array de caracteres: ${transformer.toCharArray().join(', ')}</p>
+                <p>Caracteres mezclados: ${transformer.shuffleChars()}</p>
+                <p>Inversión de caracteres: ${transformer.reverseChars()}</p>
+                <p>Sin vocales: ${transformer.removeVowels()}</p>
+                <p>Sin consonantes: ${transformer.removeConsonants()}</p>
+                <p>Array de palabras: ${transformer.toWordArray().join(', ')}</p>
+                <p>Inversión de palabras: ${transformer.reverseWords()}</p>
+            `;
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

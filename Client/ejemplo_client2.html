@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Único párrafo</p>
+</body>
+<script>
+    /* Creamos nodos HTML */
+var miEtiqueta = document.createElement("p");
+var miTexto = document.createTextNode("Soy capaz de insertar elementos en el DOM");
+
+/* Buscamos nodo padre existente*/
+var element = document.getElementsByTagName("body")[0];
+
+/* Añadimos nodos; Usamos orden correcto */
+miEtiqueta.appendChild(miTexto);
+element.appendChild(miEtiqueta);
+</script>
+</html>

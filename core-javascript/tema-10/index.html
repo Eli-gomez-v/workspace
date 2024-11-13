@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #116770;
+            
+        }
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        #display {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cronómetro</h1>
+    <div id="display">00:00</div>
+    <button id="toggleButton">Iniciar/Pausar</button>
+    <button id="resetButton">Reiniciar</button>
+    <button id="stopButton">Detener</button>
+
+    <script>
+let interval = null;
+let seconds = 0;
+let minutes = 0;
+
+/**
+ * Inicia el cronómetro utilizando `setInterval`.
+ * @param {function} updateDisplay - Función de callback para actualizar la pantalla.
+ * @throws {Error} Lanza un error si el cronómetro ya está en marcha.
+ * @returns {void}
+ */
+function startTimer(updateDisplay) {
+  if (interval !== null) {
+    throw new Error('El cronómetro ya está en marcha');
+  }
+
+  interval = setInterval(() => {
+    seconds += 1;
+    if (seconds === 60) {
+      seconds = 0;
+      minutes += 1;
+    }
+    updateDisplay(minutes, seconds);
+  }, 1000);
+}
+
+/**
+ * Detiene el cronómetro utilizando `clearInterval`.
+ * @throws {Error} Lanza un error si el cronómetro no está en marcha.
+ * @returns {void}
+ */
+function stopTimer() {
+  if (interval === null) {
+    throw new Error('El cronómetro no está en marcha');
+  }
+  clearInterval(interval);
+  interval = null;
+}
+
+/**
+ * Alterna entre iniciar y detener el cronómetro.
+ * @param {function} updateDisplay - Función de callback para actualizar la pantalla.
+ * @returns {void}
+ */
+function toggleTimer(updateDisplay) {
+  if (interval) {
+    stopTimer();
+  } else {
+    startTimer(updateDisplay);
+  }
+}
+
+/**
+ * Reinicia el cronómetro.
+ * @param {function} updateDisplay - Función de callback para actualizar la pantalla.
+ * @returns {void}
+ */
+function resetTimer(updateDisplay) {
+  stopTimer();
+  seconds = 0;
+  minutes = 0;
+  updateDisplay(minutes, seconds);
+}
+
+// Vincular las funciones a los botones en el DOM
+document.addEventListener('DOMContentLoaded', () => {
+  const display = document.getElementById('display');
+  const toggleButton = document.getElementById('toggleButton');
+  const resetButton = document.getElementById('resetButton');
+  const stopButton = document.getElementById('stopButton');
+
+  const updateDisplay = (minutes, seconds) => {
+    display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  };
+
+  toggleButton.addEventListener('click', () => {
+    toggleTimer(updateDisplay);
+    });
+
+  resetButton.addEventListener('click', () => {
+    resetTimer(updateDisplay);
+    });
+    
+  stopButton.addEventListener('click', () => {
+     stopTimer();
+    });
+
+});
+</script>
+
+</body>
+
+</html>

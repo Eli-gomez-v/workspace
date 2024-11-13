@@ -1,0 +1,532 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*  Estilos Globales */
+body {
+    font-family: 'cursive', sans-serif;
+    font-style: italic;
+    text-align: center;
+    background-color: #f5f5f5;
+    background-image: url('../images/fondo-principal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;  
+    
+}
+/* Animación de entrada */
+@keyframes grow {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+/* Aplicar la animación al título */
+.main-header h1#mi_id {
+    font-size: 2.5rem;
+    animation: grow 2s ease-in-out;
+}
+/* Contenedor Principal */
+.container {
+    background-image: url('../images/fondo_contenido2.jpg');
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================
+   Tipografía 
+============================ */
+.form-container {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: o 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    margin-top: 5vh;
+    text-align: left;
+}
+
+/* Botón */
+form button {
+    background-color: #4682B4; /* Azul suave */
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #357ABD;
+}
+
+/* ============================
+   Header y Footer
+============================ */
+.header-main, .main-header {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    padding: 10px;
+    color: white;
+    display:flex;
+    justify-content: center;
+    font-size: 3.8rem;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(80, 79, 79, 0.2);
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+    background-color: rgba(34, 25, 25, 0.805); /* Más transparencia */
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   Tipografía
+============================ */
+h1#mi_id {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.6);
+    padding: 60px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 80px;
+    background-color: #333; /* Fondo oscuro */
+    padding: 20px;
+}
+
+h2 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 60px;
+    background-color: rgb(51, 54, 53); /* Fondo azul claro con más transparencia */
+    padding: 30px;
+    border-radius: 5px;
+}
+
+/* Imágenes dentro de los contenedores */
+.welcome-section img,
+.login-section img,
+.recover-section img,
+.page-content img
+.contact-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 100%;
+    display: block;
+}
+
+/* Contenedor de la imagen */
+.video-frame {
+    width: 80%;
+    height: 100px;
+}
+
+/* Sección */
+section {
+    margin: 40px;
+}
+
+a {
+    color: #edbe8f; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #f7d4a8; /* Azul más claro */
+}
+.page-content {
+    background-image: url('../images/fondo_contenido2.jpg');
+    animation: backgroundTransition 10s infinite ease-in-out;
+    object-fit: center;
+    background-size: center;
+    background-position: center;
+    height: auto;
+    width: 100%;
+    padding: 40px;
+    display: block;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
+}
+.sketchbook-border {
+    animation: fadeIn 3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    margin: 20px;
+    text-align: justify;
+}
+.sketchbook-border p, ul, li {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color:white;
+}
+
+
+/* Login Section */
+.login-section {
+    margin-top: 10px;
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    background-image: url('../images/fondo_contenido2.jpg');
+    text-align: center;
+    background-size: cover;
+    padding: 10px;
+}
+
+.welcome-message {
+    animation: fadeIn 3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    text-align: justify;
+}
+
+.welcome-message p {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: white;
+}
+.welcome-section {
+    margin-top: 10px;
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    background-image: url('../images/fondo_contenido2.jpg');
+    text-align: center;
+    background-size: cover;
+    padding: 10px;
+}
+.recover-section {
+    margin-top: 10px;
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    background-image: url('../images/fondo_contenido2.jpg');
+    text-align: center;
+    background-size: cover;
+    padding: 10px;
+}
+.recoverForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.recoverForm input {
+    padding: 10px;
+    border-radius: 5px;
+    border-style: double solid;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+.recoverForm button {
+    background-color: #4682B4;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-style: double solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button {
+    background-color: #4682B4;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-style: double solid;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-section {
+    margin-top: 10px;
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+    background-image: url('../images/fondo_contenido2.jpg');
+    text-align: center;
+    background-size: cover;
+    padding: 10px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ============================
+   Navegación
+============================ */
+/* Centrar el navegador en la página */
+
+.main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-nav a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(70, 130, 180, 0.3), rgba(240, 248, 255, 0.3));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.main-nav a:hover {
+    background-color: #7997b6; /* Azul más claro */
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.main-nav a image {
+    width: 80%;
+    height: 80px;
+    object-fit: cover;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.main-nav a:nth-child(odd) {
+    margin-left: 60px;
+}
+
+.main-nav a:nth-child(even) {
+    margin-right: 60px;
+}
+/* ============================
+   Layout con Grid
+============================ */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: content; }
+.item4 { grid-area: sidebar; }
+.item5 { grid-area: footer; }
+
+.item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sidebar, .sidebar-right, .sidebar-left {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Botones y labels */
+button, label {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: white;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover, label:hover {
+    background-color: #0f3b1441;
+    transform: scale(1.05); /* Escala un poco al pasar el mouse */
+}
+
+/* ============================
+   Componentes Específicos
+============================ */
+/* Fondo de los labels que ocupa todo el contenedor en horizontal */
+label {
+    display: block;
+    width: 100%;
+    background-color: rgba(70, 130, 180, 0.2);
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+label:hover {
+    background-color: rgba(226, 233, 238, 0.4);
+}
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(234, 225, 225, 0.8);
+    gap: 10px;
+}
+
+form label {
+    font-size: 1rem;
+    background-color: rgba(233, 223, 223, 0.3);
+}
+
+form input {
+    padding: 12px;
+    border-style: double solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.form-container label {
+    font-size: 1rem;
+    color: #eaeef2;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.form-container input, .form-container button {
+    padding: 12px;
+    border: 1px solid #4682B4; /* Línea clara en los bordes */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-container button:hover {
+    background-color: #357ABD; /* Color de hover */
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* Galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: filter 0.5s ease-in-out;
+}
+
+img:hover {
+    filter: brightness(0.8);
+}
+
+
+
+.social-link {
+    color: #4682B4;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #357ABD;
+    text-decoration: underline;
+}
+
