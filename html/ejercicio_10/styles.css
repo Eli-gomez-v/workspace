@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: rgba(13, 91, 137, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+}
+
+h1#mi_id {
+    font-size: 2.5rem;
+    color: #dff1ea;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Filtros diferentes para cada imagen duplicada */
+.filter-0 { filter: none; }
+.filter-1 { filter: grayscale(100%); }
+.filter-2 { filter: sepia(100%); }
+.filter-3 { filter: hue-rotate(180deg); }
+.filter-4 { filter: invert(100%); }
+.filter-5 { filter: contrast(150%) brightness(120%); }
+.filter-6 { filter: hue-rotate(270deg) saturate(200%); }
+.filter-7 { filter: opacity(70%) blur(1px); }
+.filter-8 { filter: brightness(50%) contrast(200%); }
+
+/* Efecto hover */
+.filter-0:hover { filter: grayscale(100%); transition-timing-function: ease-in; }
+.filter-1:hover { filter: sepia(100%); transition-timing-function: ease-out; }
+.filter-2:hover { filter: brightness(150%); transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+.filter-3:hover { filter: hue-rotate(360deg); transition-timing-function: ease-in-out; }
+.filter-4:hover { filter: invert(0%); transition-timing-function: linear; }
+.filter-5:hover { filter: contrast(100%) brightness(100%); transition-timing-function: ease-in; }
+.filter-6:hover { filter: hue-rotate(0deg) saturate(100%); transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+.filter-7:hover { filter: opacity(100%) blur(0px); transition-timing-function: ease-out; }
+.filter-8:hover { filter: brightness(100%) contrast(100%); transition-timing-function: ease-in-out; }

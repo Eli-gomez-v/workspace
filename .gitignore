@@ -91,3 +91,6 @@ bower_components/
 
 # Optional stylelint cache
 .stylelintcache
+
+# Optional editor/IDE files
+*.Proyecto_final_HTML_CSS

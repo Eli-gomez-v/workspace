@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Agile</title>
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="favicon.ico"> 
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="titulo">Ejercicio 5 de Horario</h1>
+
+        <h2 class="subtitulo">Mi horario Agile Inventado:</h2>
+
+        <div class="separator"></div>
+
+        <table>
+            <tr>
+                <th class="horario">Horario</th>
+                <th><strong>LUNES</strong></th>
+                <th><strong>MARTES</strong></th>
+                <th><strong>MIÉRCOLES</strong></th>
+                <th><strong>JUEVES</strong></th>
+                <th><strong>VIERNES</strong></th>
+            </tr>
+            <tr>
+                <td class="horario">08-09</td>
+                <td class="combined red" rowspan="2">Sprint Planning</td>
+                <td class="light-red">daily scrum</td>
+                <td class="light-red">daily scrum</td>
+                <td class="light-red">daily scrum</td>
+                <td class="light-red">daily scrum</td>
+            </tr>
+            <tr>
+                <td class="horario">09-10</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="light-blue">Formación</td>
+            </tr>
+            <tr>
+                <td class="horario">10-11</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="light-blue">Formación</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="horario">11-11:30</td>
+                <td colspan="5" class="almuerzo">
+                    <button onclick="window.open('contenido-almuerzo.html', '_blank')"></button>
+                    <!-- Sección de Almuerzo utilizando el detalle <details> -->
+                    <details>
+                        <summary>Almuerzo</summary>
+                        <div id="contenido-almuerzo">
+                            <h3>Almuerzos Idóneos</h3>
+                            <p>Aquí tienes algunas recomendaciones de almuerzos:</p>
+                            <ul>
+                                <li>Ensalada de quinoa con aguacate</li>
+                                <li>Pasta integral con vegetales y salmón</li>
+                                <li>Wrap de pollo con hummus</li>
+                                <li>Sándwich de atún con pan integral</li>
+                            </ul>
+                        </div>
+                    </details>
+                </td>
+            </tr>
+            <tr>
+                <td class="horario">11:30-12:30</td>
+                <td class="light-blue">Formación</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="combined red" rowspan="2">Sprint review</td>
+            </tr>
+            <tr>
+                <td class="horario">11:30-12:30</td>
+                <td></td>
+                <td></td>
+                <td class="light-blue">Formación</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="horario">11:30-12:30</td>
+                <td></td>
+                <td class="light-blue">Formación</td>
+                <td></td>
+                <td></td>
+                <td class="red">Sprint retrospective</td>
+            </tr>
+        </table>
+
+        <div class="separator"></div>
+    </div>
+
+    <div class="banner">
+        <img src="imagen/urbansketch.webp" alt="Banner Image">
+    </div>
+
+    <footer>
+        <a class="autor" href="https://aulasne.navarra.es/course/index.php?categoryid=19">moodle</a>
+    </footer>
+
+</body>
+</html>

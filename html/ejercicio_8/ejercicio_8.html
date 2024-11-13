@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Logins</title>
+    <link rel="icon" type="image/x-icon" sizes="48x48" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="mi_id">Formulario de Logins</h1>
+        <br>
+
+    <form action="/check.html" method="POST">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="tuemail@example.com">
+        <br>
+        <br>
+        <label for="pass">Password (8 caracteres min):</label>
+        <input type="password" id="pass" name="password" required minlength="8" placeholder="Introduce tu contraseña">
+        <br>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+    <br>
+    <separator class="separator"></separator>
+    <br>
+    <h2>Encuesta al Usuario</h2>
+    <form action="/submit-survey.html" method="POST">
+        <!-- Nombre -->
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required placeholder="Escribe tu nombre completo">
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="tuemail@example.com">
+
+        <!-- Edad -->
+        <label for="age">Edad:</label>
+        <input type="number" id="age" name="age" min="18" max="100" required placeholder="18">
+
+        <!-- Fecha de la experiencia -->
+        <label for="date">Fecha de tu experiencia:</label>
+        <input type="date" id="date" name="experience_date" required>
+
+        <!-- Satisfacción con el servicio -->
+        <label for="rating">Calificación del servicio:</label>
+        <input type="range" id="rating" name="rating" min="1" max="10" step="1">
+
+        <!-- Pregunta de elección múltiple -->
+        <label>¿Cómo calificarías nuestra atención al cliente?</label>
+        <input type="radio" id="excellent" name="customer_service" value="Excelente" required>
+        <label for="excellent">Excelente</label>
+        <input type="radio" id="good" name="customer_service" value="Buena">
+        <label for="good">Buena</label>
+        <input type="radio" id="average" name="customer_service" value="Regular">
+        <label for="average">Regular</label>
+        <input type="radio" id="poor" name="customer_service" value="Deficiente">
+        <label for="poor">Deficiente</label>
+
+        <!-- Comentarios adicionales -->
+        <label for="comments">Comentarios adicionales:</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Escribe tus comentarios"></textarea>
+
+        <!-- Botón de envío -->
+        <button type="submit">Enviar Encuesta</button>
+    </form>
+
+
+</div>
+    <script></script>
+</body>
+</html>
+

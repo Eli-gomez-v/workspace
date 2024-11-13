@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch Articles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      color: #003366;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      font-size: 1.2em;
+      margin-right: 10px;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 1em;
+      margin: 5px 0;
+    }
+
+    button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #002244;
+    }
+
+    #articleContent {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    table {
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 800px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #003366;
+      color: white;
+      font-size: 1.2em;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+
+    .selectArticle {
+      background-color: #003366;
+      color: white;
+      padding: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .selectArticle:hover {
+      background-color: #002244;
+    }
+
+    #articleTable {
+      display: none; /* Ocultamos la tabla por defecto */
+      max-height: 400px;
+      overflow-y: auto; /* Agregar scroll si hay muchos artículos */
+    }
+  </style>
+</head>
+<body>
+  <h1>Article Fetcher</h1>
+  
+  <div class="input-group">
+    <label for="articleId">Enter Article ID:</label>
+    <input type="number" id="articleId" value="1">
+  </div>
+
+  <div class="input-group">
+    <button id="fetchArticleBtn">Fetch Article</button>
+    <button id="fetchAllArticlesBtn">Fetch All Articles</button>
+  </div>
+
+  <div id="articleContent"></div>
+  <div id="articleTable"></div>
+
+  <script src="index.js"></script>
+  <script>
+    const fetchArticleBtn = document.getElementById('fetchArticleBtn');
+    const fetchAllArticlesBtn = document.getElementById('fetchAllArticlesBtn');
+    const articleContentDiv = document.getElementById('articleContent');
+    const articleTableDiv = document.getElementById('articleTable');
+
+    // Botón para buscar un artículo por ID
+    fetchArticleBtn.addEventListener('click', async () => {
+      const id = document.getElementById('articleId').value;
+      const article = await fetchArticleById(id);
+      if (article) {
+        articleContentDiv.textContent = `Title: ${article.title}\nContent: ${article.body}`;
+      } else {
+        articleContentDiv.textContent = 'Error fetching article.';
+      }
+      articleTableDiv.style.display = 'none'; // Ocultar la tabla si está visible
+    });
+
+    // Botón para listar todos los artículos
+    fetchAllArticlesBtn.addEventListener('click', async () => {
+      const articles = await fetchAllArticles();
+      articleTableDiv.innerHTML = ''; // Limpiar contenido previo
+      if (articles) {
+        renderArticlesTable(articles);
+      } else {
+        articleTableDiv.textContent = 'Error fetching articles.';
+      }
+    });
+
+    // Función para renderizar la tabla de artículos con título y contenido
+    function renderArticlesTable(articles) {
+      const table = document.createElement('table');
+      table.innerHTML = '<tr><th>Title</th><th>Content</th><th>Select</th></tr>';
+      articles.forEach(({ id, title, body }) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${title}</td><td>${body}</td><td><button class="selectArticle" data-id="${id}">Select</button></td>`;
+        table.appendChild(row);
+      });
+      articleTableDiv.appendChild(table);
+      articleTableDiv.style.display = 'block'; // Mostrar la tabla
+      articleTableDiv.scrollIntoView({ behavior: 'smooth' }); // Desplazar para ver la tabla
+
+      // Añadir funcionalidad de selección de artículo desde la tabla
+      document.querySelectorAll('.selectArticle').forEach(button => {
+        button.addEventListener('click', async (event) => {
+          const articleId = event.target.getAttribute('data-id');
+          const article = await fetchArticleById(articleId);
+          if (article) {
+            document.getElementById('articleId').value = article.id; // Actualizar el input con el ID del artículo seleccionado
+            articleContentDiv.textContent = `Title: ${article.title}\nContent: ${article.body}`;
+            articleTableDiv.style.display = 'none'; // Ocultar la tabla después de seleccionar
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

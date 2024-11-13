@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Sets en JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #4682b4;
+      text-shadow: 1px 1px #a9a9a9;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      height: 40px;
+      font-size: 1.2em;
+      padding: 5px;
+      border: 2px solid #87cefa;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    button {
+      width: 180px;
+      height: 50px;
+      font-size: 1.1em;
+      margin: 10px;
+      color: white;
+      background-color: #4682b4;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background-color: #5a9bd4;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #4682b4;
+      text-align: center;
+      padding: 15px;
+      border: 2px solid #87cefa;
+      border-radius: 10px;
+      background-color: #e0f7fa;
+      width: 80%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Juego de Sets en JavaScript</h1>
+
+  <div class="input-container">
+    <label for="setA">Introduce números para Set A (separados por comas):</label>
+    <input type="text" id="setA" placeholder="Ejemplo: 1,2,3" />
+  </div>
+  
+  <div class="input-container">
+    <label for="setB">Introduce números para Set B (separados por comas):</label>
+    <input type="text" id="setB" placeholder="Ejemplo: 2,3,4" />
+  </div>
+
+  <button onclick="showIntersection()">Intersección</button>
+  <button onclick="showUnion()">Unión</button>
+  <button onclick="showDifference()">Diferencia</button>
+  <button onclick="checkSubset()">Es subconjunto</button>
+  <button onclick="showMinMax()">Mínimo y Máximo</button>
+  <button onclick="showValuesInRange()">Valores en Rango</button>
+
+  <div id="output">Resultado:</div>
+
+  <script>
+    function parseInput(inputId) {
+      const input = document.getElementById(inputId).value;
+      return new Set(input.split(',').map(Number));
+    }
+
+    function showIntersection() {
+      const setA = parseInput('setA');
+      const setB = parseInput('setB');
+      const result = [...intersectionOfSets(setA, setB)];
+      document.getElementById('output').innerText = `Intersección: ${result.join(', ')}`;
+    }
+
+    function showUnion() {
+      const setA = parseInput('setA');
+      const setB = parseInput('setB');
+      const result = [...unionOfSets(setA, setB)];
+      document.getElementById('output').innerText = `Unión: ${result.join(', ')}`;
+    }
+
+    function showDifference() {
+      const setA = parseInput('setA');
+      const setB = parseInput('setB');
+      const result = [...differenceOfSets(setA, setB)];
+      document.getElementById('output').innerText = `Diferencia: ${result.join(', ')}`;
+    }
+
+    function checkSubset() {
+      const setA = parseInput('setA');
+      const setB = parseInput('setB');
+      const result = isSubset(setA, setB);
+      document.getElementById('output').innerText = `Es subconjunto: ${result}`;
+    }
+
+    function showMinMax() {
+      const setA = parseInput('setA');
+      const { min, max } = findMinMax(setA);
+      document.getElementById('output').innerText = `Mínimo: ${min}, Máximo: ${max}`;
+    }
+
+    function showValuesInRange() {
+      const setA = parseInput('setA');
+      const min = prompt("Introduce el valor mínimo del rango:");
+      const max = prompt("Introduce el valor máximo del rango:");
+      const result = [...valuesInRange(setA, Number(min), Number(max))];
+      document.getElementById('output').innerText = `Valores en rango [${min}, ${max}]: ${result.join(', ')}`;
+    }
+
+    function intersectionOfSets(setA, setB) {
+      return new Set([...setA].filter((value) => setB.has(value)));
+    }
+
+    function unionOfSets(setA, setB) {
+      return new Set([...setA, ...setB]);
+    }
+
+    function differenceOfSets(setA, setB) {
+      return new Set([...setA].filter((value) => !setB.has(value)));
+    }
+
+    function isSubset(setA, setB) {
+      return [...setA].every((value) => setB.has(value));
+    }
+
+    function findMinMax(set) {
+      if (set.size === 0) return { min: undefined, max: undefined };
+      const values = [...set];
+      return {
+        min: Math.min(...values),
+        max: Math.max(...values),
+      };
+    }
+
+    function valuesInRange(set, min, max) {
+      return new Set([...set].filter((value) => value >= min && value <= max));
+    }
+  </script>
+</body>
+</html>

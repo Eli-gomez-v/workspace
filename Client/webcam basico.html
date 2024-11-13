@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // Selecciona el elemento de video en el HTML donde se mostrará el flujo de la cámara
+        const video = document.querySelector('video');
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                const video = document.querySelector('video');
+                video.srcObject = stream;
+                video.onloadedmetadata = () => {
+                    video.play();
+                };
+            })
+            .catch((error) => {
+                console.error('Error al acceder a la cámara:', error);
+            });
+
+    </script>
+
+
+
+</head>
+<body>
+    <p>A continuacion se verá la webcam:</p>
+    <br>
+    <video autoplay style="width: 600px;height: 600px">    </video>
+
+</body>
+</html>

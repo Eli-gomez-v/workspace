@@ -1,0 +1,77 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    border: 3px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1#mi_id {
+    font-size: 4rem;
+    color: blue;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    z-index: 10;
+    position: relative;
+}
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la lista ordenada de corredores */
+ol.corredores {
+    counter-reset: item 19;
+    list-style-type: none;
+    padding-left: 0;
+    font-family: Arial, sans-serif;
+}
+
+ol.corredores>li {
+    margin-bottom: 10px;
+}
+
+ol>li:nth-child(even) {
+    background-color: gray;
+    
+}
+
+ul.versiones {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul.versiones>li {
+    margin-bottom: 10px;
+}
+
+ul>li::marker {
+    content: '☠️ ';
+    font-size: 1.1em;
+}
+
+ul>li:last-child::marker {
+    content: '✅';
+    font-size: 1.5em;
+}
+
+.separator {
+    border-top: 3px solid #ccc;
+    margin: 20px 0;
+}

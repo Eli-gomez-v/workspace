@@ -1,0 +1,183 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajuste de elementos clave */
+button, input, select, textarea {
+    margin: initial;
+    padding: initial;
+    box-sizing: border-box;
+}
+/* Estilos Globales */
+body {
+    font-family: 'cursive', sans-serif;
+    font-style: italic;
+    color: #333;
+    background-color: #f5f3e6;
+    background-image: url('../img/fondo_contenido2.jpg');
+    background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+    background-attachment: fixed; /* Hace que la imagen de fondo se mantenga fija al hacer scroll */
+    background-position: center;
+}
+
+/* Cabecera */
+.main-header {
+    width: 100%;
+    text-align: center;
+    background-image:url('../img/aprende.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navegación */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background-color: #a4c8e0;
+}
+
+.main-nav a {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column; 
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.main-nav a:hover {
+    background-color: #357ABD;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Contenedor Principal */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100px;
+    margin: auto;
+}
+
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius:10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 1rem;
+    background-color: transparent;
+    font-size: 1rem;
+}
+ 
+.form-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Corregido el valor de box-shadow */
+    max-width: 200px;
+    width: 90%;
+    margin: 20px auto;
+    margin-top: 5vh;
+    text-align: left;
+}
+
+/* Botón */
+form input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #4682B4;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #4682B4; /* Azul suave */
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer; /* Añadido para indicar que es un botón clicable */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: #357ABD;
+    transform: scale(1.05); /* Añadido para un efecto de hover */
+}
+
+/* Tarjetas de galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: filter 0.5s, transform 0.5s;
+}
+
+.gallery img:hover {
+    filter: brightness(0.8);
+    transform: scale(1.05);
+}
+
+img:hover {
+    filter: brightness(0.8);
+}
+
+/* Pie de página */
+.main-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(70, 130, 180, 0.1);
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}

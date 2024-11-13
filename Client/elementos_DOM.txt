@@ -1,0 +1,64 @@
+# Ejercicio para interactuar en el DOM con diferentes APIs web
+
+## Creación de un javascript para la web [navarra.es](https://navarra.es/inicio)
+
+1.  Abrir la consola en el navegador de la página arriba indicada con
+    F12 o clic bottom dcho.
+2.  Puedes pegar el código javascript (dentro de la consola del
+    navegador) abajo descrito para ejecutar.
+
+## Explicación del código
+
+-   **document.title** para establecer un nuevo título.
+-   **document.body.style**... para color de texto y fondo general.
+-   **querySelectorAll** para seleccionar encabezados (h1..h6) y enlaces
+    y cambiar colores.
+-   **style.filter** para aplicar un ajuste de color con hue-rotate.
+-   **document.createElement** y **TextNode** con la variable **const
+    newParagraph** y **textParagraph**.
+-   **appendChild** método que sirve para agregar, textParagraph, último
+    hijo de newParagraph.
+-   **getElementsByClassName**, uso el elemento fixed-top (también se
+    puede usar el body si no existe) para seleccionar el destino de `p`.
+-   prepend para insertarlo.
+
+### Adjunto banner de imagen de mi resultado con el código
+
+![Página navarra.es](Client/pag-nav-es.png)
+
+\`\`\`javascript
+
+// 1. Cambiar el título de la página
+
+document.title = "Página personalizada de Navarra";
+
+// 2. Cambiar colores de la página a tonos de azul y verde
+
+document.body.style.backgroundColor = "#bdd2ea"; // Fondo azul claro
+document.body.style.color = "darkblue"; // Texto azul oscuro;
+
+// Cambiar color de los encabezados y otros elementos específicos
+
+const headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+headers.forEach(header =\> { header.style.color = "green"; });
+
+const links = document.querySelectorAll("head"); links.forEach(link =\>
+{ link.style.color = "teal"; });
+
+// Aplicar filtro de color a las imágenes const images =
+document.querySelectorAll("images/logo-navarra-es.png");
+images.forEach(image =\> { image.style.filter = "hue-rotate(120deg)"; //
+Ajuste de color verde });
+
+// 3. Añadir un nuevo elemento HTML al DOM // Crear el nuevo elemento
+const nuevoParrafo = document.createElement("p"); const textoParrafo =
+document.createTextNode("Soy capaz de insertar elementos en el DOM");
+
+// Añadir texto al párrafo nuevoParrafo.appendChild(textoParrafo);
+
+// Identificar el elemento donde se insertará el nuevo párrafo const
+destino = document.getElementsByClassName("fixed-top")\[0\] \|\|
+document.body;
+
+// Insertar el nuevo elemento al principio de `destino`
+destino.prepend(nuevoParrafo);
