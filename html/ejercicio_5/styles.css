@@ -25,6 +25,7 @@ h2.subtitulo {
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /* Estilos de la tabla */
 table {
     width: 100%;
@@ -120,6 +121,8 @@ button:hover {
 }
 /* Estilos de los separadores */
 
+=======
+>>>>>>> 7645d27a3c973849c08e9797d7a1608d46e10eeb
 .separator {
     border-top: 2px solid #ccc;
     margin: 20px 0;
