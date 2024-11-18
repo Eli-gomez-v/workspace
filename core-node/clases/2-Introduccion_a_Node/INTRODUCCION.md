@@ -129,7 +129,7 @@ Node.js aprovecha la arquitectura controlada por eventos de JavaScript para un a
 - **Callbacks:** Funciones que se pasan como argumentos y se ejecutan al completar una tarea.
 - **Promesas:** Objetos que representan la eventual finalización (o fallo) de una operación asíncrona.
 
-**(Ejemplos de código para Async/await, Promesas y Callbacks)**
+- **(Ejemplos de código para Async/await, Promesas y Callbacks)**
 
 ### Lectura de archivo asíncrona
 
@@ -138,6 +138,11 @@ Node.js aprovecha la arquitectura controlada por eventos de JavaScript para un a
 
 const fs = require('fs').promises;
 
+const filePath = './file.txt';
+
+async function readFileAsync() {
+  try {
+    const data = await fs.readFile
 const filePath = './file.txt';
 
 // `async` before the parent function

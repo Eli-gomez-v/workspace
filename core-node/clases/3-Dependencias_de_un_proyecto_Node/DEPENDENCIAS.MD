@@ -818,14 +818,14 @@ Ejecutar `npm audit` con regularidad es un procedimiento recomendado para identi
 El flujo de trabajo recomendado para las actualizaciones es:
 
 - **npm run test:** compruebe que las pruebas existentes se pasan antes de iniciar este proceso de actualización.
-- **npm audit: ** para comprobar si hay vulnerabilidades en la versión actual que usa. En la información de npm audit es posible que se recomiende la actualización a una versión principal. Debe revisar cuidadosamente los cambios importantes si se enumeran.
-- **npm outdated: ** para enumerar todos los paquetes obsoletos. Este comando proporciona información en las columnas Deseado, Último y Ubicación.
+- **npm audit:** para comprobar si hay vulnerabilidades en la versión actual que usa. En la información de npm audit es posible que se recomiende la actualización a una versión principal. Debe revisar cuidadosamente los cambios importantes si se enumeran.
+- **npm outdated:** para enumerar todos los paquetes obsoletos. Este comando proporciona información en las columnas Deseado, Último y Ubicación.
 
 ### Actualice con npm update:
 
-- Para proyectos más pequeños (algunas dependencias en package.json: puede probar npm update para actualizar todas las dependencias y, a continuación, ejecutar las pruebas.
+- Para proyectos más pequeños (algunas dependencias en package.json: puede probar npm update para actualizar todas las dependencias y, a continuación, ejecutar las pruebas).
 
-- Para proyectos más grandes (con muchas dependencias en package.json: actualice un único paquete o una familia de paquetes (como Next.js y React) y, a continuación, ejecute las pruebas.
+- Para proyectos más grandes (con muchas dependencias en package.json: actualice un único paquete o una familia de paquetes (como Next.js y React) y, a continuación, ejecute las pruebas).
 
 - npm audit: compruebe que no hay vulnerabilidades críticas o de nivel alto. Si todavía hay vulnerabilidades, use npm update con el nombre del paquete y la versión principal recomendada en npm audit.
 

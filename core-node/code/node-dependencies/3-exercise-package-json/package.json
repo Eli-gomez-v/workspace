@@ -1,13 +1,25 @@
+
 {
-  "name": "3-exercise-package-json",
+  "name": "anfora-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API HTTP para administrar elementos de la base de datos de ANFORA database",
   "main": "index.js",
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
   "scripts": {
     "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "API",
+    "database",
+    "javascript",
+    "nodejs",
+    "azure",
+    "mslearning"
+
+  ],
+  "author": "Elivan",
   "license": "ISC"
 }
