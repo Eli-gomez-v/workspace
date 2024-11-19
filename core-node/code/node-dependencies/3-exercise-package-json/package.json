@@ -1,4 +1,3 @@
-
 {
   "name": "anfora-api",
   "version": "1.0.0",
@@ -18,8 +17,8 @@
     "nodejs",
     "azure",
     "mslearning"
-
   ],
   "author": "Elivan",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {}
 }

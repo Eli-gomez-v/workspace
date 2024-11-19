@@ -27,7 +27,7 @@ Después de completar este módulo, sabrás:
 
 ### Configuración inicial
 
-Le damos la bienvenida al mundo de la administración de proyectos de Node.js con NPM (Node Package Manager. Vamos a profundizar en los aspectos básicos de las dependencias y cómo puede sobrecargar el proceso de desarrollo. Para facilitar la comprensión de cada una de las piezas del ecosistema de dependencias hemos usado descripciones con ejemplos del día a día que te permitirán recordar mejor para que sirve cada una:
+Le damos la bienvenida al mundo de la administración de proyectos de Node.js con NPM (Node Package Manager). Vamos a profundizar en los aspectos básicos de las dependencias y cómo puede sobrecargar el proceso de desarrollo. Para facilitar la comprensión de cada una de las piezas del ecosistema de dependencias hemos usado descripciones con ejemplos del día a día que te permitirán recordar mejor para que sirve cada una:
 
 **Empaquetado y Administración de paquetes**
 
