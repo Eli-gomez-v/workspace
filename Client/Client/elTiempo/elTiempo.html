@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina del tiempo</title>
+    <script defer src="miScriptMeteorologico.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="mi_id"> 
+    <h1>El tiempo en tu ciudad</h1>
+    </header>
+    <section>
+    <!-- Navigation -->
+    <div class="container">
+    <p>Elija su ubicación:</p>
+    <input type="search" name="location" id="location" value="">
+    <input type="button" value="check" id="button">
+    <br>    
+    <p>Introduce tus coordenadas</p>
+    <input type="search" name="latitud" id="latitud" value="">
+    <input type="search" name="longitud" id="longitud" value="">
+    <input type="button" value="check" id="buttonCoordenadas">
+    <br>    
+    <h2>Este es el tiempo actual para <span id="ubicacionPedida"> ...</span></h2>
+    <p>La prevision es <span id="prevision">...</span> <img src="#" alt="" id="icono" style="width: 50px;"></p>
+    <p> La temperatura es de <span id="temp">...</span> grados.</p>
+    <p>La humedad es del <span id="humedad">...</span>%.</p>
+    <p>La latitud <span id="latitud">...</span></p>
+    <p>La longitud <span id="longitud">...</span></p>
+    <br>
+    <div class="separator"></div>
+    </section>
+    <br> 
+    <footer class="main-footer">
+        Creado y producido por Eli Gómez
+    </footer>
+    </div>
+</body>
+
+</html>

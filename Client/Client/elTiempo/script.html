@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina del tiempo</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="mi_id"> 
+        <h1>El tiempo en tu ciudad</h1>
+    </header>
+    <!-- Navigation -->
+    <section id="prevision">
+        <div class="container">
+            <h2>Elija su ubicación:</h2>
+            <input type="search" name="location" id="location" value="Pamplona, es">
+            <input type="button" value="check" id="button">
+            <br>
+            <h2>Introduce tus coordenadas<span id="previsionCoordenadas">...</span></h2>
+            <p>Latitud: <span id="latitud">...</span>º</p>
+            <p>Longitud: <span id="longitud">...</span>º</p>
+            <input type="search" name="latitud" id="latitudInput" value="42.8">
+            <input type="search" name="longitud" id="longitudInput" value="-1.64">
+            <input type="button" value="check" id="buttonCoordenadas">
+            <h2>Este es el tiempo actual para <span id="ubicacionPedida"> ...</span></h2>
+            <p>La prevision es <span id="previsionTiempo">...</span> <img src="#" alt="" id="icono" style="width: 50px;"></p>
+            <p> La temperatura es de <span id="temp">...</span> grados.</p>
+            <p>La humedad es del <span id="humedad">...</span>%.</p>
+            <p>La velocidad del viento es de <span id="viento">...</span> km/h.</p>
+            <p>La dirección del viento es <span id="direccionViento">...</span>.</p>
+            <p>La presión es de <span id="presion">...</span> hPa.</p>
+        </div>
+    </section> 
+    <footer class="main-footer">
+        Creado y producido por Eli Gómez
+    </footer>
+</body>
+</html>

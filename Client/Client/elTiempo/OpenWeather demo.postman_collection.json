@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "2a04103a-6233-46ee-846c-ffe7b023d3fa",
+		"name": "OpenWeather demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"version": "1.0.0"
+	},
+	"item": [
+		{
+			"name": "Weather by City Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q={{cityName}}&lang=es&appid=2123b15abf5bdccb4b78d19cce8dd7d",
+					"protocol": "https",
+					"host": [
+						"https://api.openweathermap.org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Pamplona"
+						},
+						{
+							"key": "lang",
+							"value": "es"
+							
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						},
+						
+						{
+							"key": "appid",
+							"value": "2123b15abf5bdccb4b78d19cce8dd7d"
+						}
+					]
+				}
+			},
+		"response": []
+	},
+	{
+		"name": "Get Weather by Coordinates",
+		"request": {
+			"method": "GET",
+			"header": [],
+			"url": {
+				"raw": "https://api.openweathermap.org/data/2.5/weather?lat=42.8&lon=-1.64&appid=2196f2a3140v0b0d6c125e8169257760b5&units=metric&lang=es",
+				"protocol": "https",
+				"host": [
+					"api",
+					"openweathermap",
+					"org"
+				],
+				"path": [
+					"data",
+					"2.5",
+					"weather"
+				],
+				"query": [
+					{
+						"key": "lat",
+						"value": "42.8"
+					},
+					{
+						"key": "lon",
+						"value": "-1.64"
+					},
+					{
+						"key": "appid",
+						"value": "2196f2a3140v0b0d6c125e8169257760b5"
+					},
+					{
+						"key": "units",
+						"value": "metric"
+					},
+					{
+						"key": "lang",
+						"value": "es"
+					}
+				]
+			}
+		},
+		"response": []
+	}
+
+	]
+}
