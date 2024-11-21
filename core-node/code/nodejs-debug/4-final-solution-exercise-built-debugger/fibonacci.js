@@ -5,14 +5,18 @@
 function fibonacci(n) {
   let n1 = 0;
   let n2 = 1;
-  const n3 = 0;
+  let sum = 0;
+
+  if (n === 0) return n1;
+  if (n === 1) return n2;
+  
 
   for (let i = 2; i <= n; i++) {
     sum = n1 + n2;
     n1 = n2;
     n2 = sum;
   }
-  return n === 0 ? n1 : n2;
+  return n2;
 }
 
 const result = fibonacci(5);
