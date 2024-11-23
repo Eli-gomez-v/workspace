@@ -1,8 +1,7 @@
-// Buscar directorio principal con nodejs en cualquier sistema operativo.
-const path = require('path');
+// Obtener la ruta del directorio actual
 
 function getDirectory(){
-    return path.resolve(__dirname);
+    return process.cwd();
 }
 
 const directory = getDirectory();
