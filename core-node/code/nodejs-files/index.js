@@ -1,7 +1,7 @@
 // Obtener la ruta del directorio actual
-
+const path = require('path');
 function getDirectory(){
-    return process.cwd();
+    return path.resolve(__dirname);
 }
 
 const directory = getDirectory();
