@@ -829,7 +829,7 @@ async function calculateSalesTotal(salesFiles) {
   let salesTotal = 0;
 
   // (1) Tterates over the `salesFiles` array.
-  for (file of salesFiles) {
+  for (const file of salesFiles) {
     // (2) Reads the file.
     const fileContents = await fs.readFile(file);
 
