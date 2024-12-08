@@ -89,6 +89,28 @@ Un enorme agradecimiento al profesor Jessie Buckland Perez por su guía y apoyo 
 
 ---
 
+### Estructura carpetas FIRTS-PROYECT-AS-PROGRAMMER
+
+.
+├── core-node-eli
+│   ├── apps
+│   ├── eslint.config.js
+│   ├── jest.config.ts
+│   ├── jest.preset.js
+│   ├── node_modules
+│   ├── nx.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── tsconfig.base.json
+├── Ejercicios realizados
+│   ├── core-node-web
+│   ├── Eli-ejercicio-tema-2
+│   ├── Eli-ejercicio-tema-3
+│   ├── Eli-ejercicio-tema-4
+│   ├── Eli-ejercicio-tema-5
+│   └── Eli-ejercicio-tema-6
+└── README.md
 ¡Espero que esta información te sea útil! 😄
 
 ### Ejercicio 1: Exploración de Directorios y Archivos 📂
