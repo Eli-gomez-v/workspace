@@ -1,8 +1,0 @@
-{
-    "name": "ui",
-    "version": "1.0.0",
-    "scripts": {
-      "start": "tsc && node src/main.ts",
-      "test": "jest"
-    }
-  }

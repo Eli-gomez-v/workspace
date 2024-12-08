@@ -1,9 +1,0 @@
-{
-    "server": {
-      "baseDir": "./apps/ui/src",
-      "routes": {
-        "/": "index.html"
-      }
-    },
-    "files": ["./apps/ui/src/**/*.{html,htm,css,js}"]
-  }
