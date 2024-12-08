@@ -1,0 +1,15 @@
+{
+  "name": "mi-proyecto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Eli-gomez-v",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "description": ""
+}
