@@ -1,16 +1,18 @@
-## Qué son las bases de datos
+# Qué son las bases de datos
 
 Conjunto de datos estructurados que pertenecen a un mismo contexto y, en cuanto a su función, se utiliza para administrar de forma electrónica grandes cantidades de información.
 Ventajas:
+
 - Acceso rápido
 - Minimización de repetitividad
 - Administración de datos ilimitados
 - Acceso globalizado y centralizado
 - Eficacio y eficencia
 
-Las bases de datos se pueden clasificar según su organización. Nos vamos a centrar en la base de datos relacional ya que es de las más usadas en la actualidad por su dinamismo. 
+Las bases de datos se pueden clasificar según su organización. Nos vamos a centrar en la base de datos relacional ya que es de las más usadas en la actualidad por su dinamismo.
 
 ## Base de datos relacionales
+
 Está caracterizada por su estructuración en tablas asociadas por relaciones bien definidas.
 El modelo Entidad-Relación es la manera de representar gráficamente la estructura de este tipo de base de datos.
 
@@ -20,20 +22,22 @@ El modelo Entidad-Relación es la manera de representar gráficamente la estruct
 
  ![Alt text](image.png)
 
- ## Lenguaje SQL
- SQL (Structured Query Language) es el lenguaje de programción que permite realizar operaciones con las bases de datos. 
- SQL permite hacer las siguientes acciones: 
- - Asignar permisos en tablas, procedimientos y vistas
- - Crear vistas
- - Crear nuevas tablas
- - Crear procedimientos 
- - Ejecutar consultas
- - Insertar, actualizar y borrar registros
- - Crear base de datos
+## Lenguaje SQL
+
+ SQL (Structured Query Language) es el lenguaje de programción que permite realizar operaciones con las bases de datos.
+ SQL permite hacer las siguientes acciones:
+
+- Asignar permisos en tablas, procedimientos y vistas
+- Crear vistas
+- Crear nuevas tablas
+- Crear procedimientos
+- Ejecutar consultas
+- Insertar, actualizar y borrar registros
+- Crear base de datos
 
  Está compuesto por:
 
- __Comandos DDL__ (Data Definition Language), crear y definir nuevas base de datos, campos e índices.
+ **Comandos DDL** (Data Definition Language), crear y definir nuevas base de datos, campos e índices.
 
 | Comando | Descripción |
 |---------|-------------|
@@ -41,8 +45,7 @@ El modelo Entidad-Relación es la manera de representar gráficamente la estruct
 | DROP | Eliminar tablas, índices, base de datos |
 | ALTER | Modificar tablas, índices |
 
-
-__Comandos DML__ (Data Manipulation Language), generar consultas.
+**Comandos DML** (Data Manipulation Language), generar consultas.
 
 | Comando | Descripción |
 |---------|-------------|
@@ -51,8 +54,7 @@ __Comandos DML__ (Data Manipulation Language), generar consultas.
 | UPDATE  | Actualizar registros de las tablas  |
 | DELETE  | Borrar registros de las tablas  |
 
-
-__Claúsulas__, condiciones que se quiere cumplir en la búsqueda de los datos.
+**Claúsulas**, condiciones que se quiere cumplir en la búsqueda de los datos.
 
 | Comando | Descripción |
 |---------|-------------|
@@ -61,8 +63,7 @@ __Claúsulas__, condiciones que se quiere cumplir en la búsqueda de los datos.
 | GROUP BY | Para separar los registros seleccionados en grupos |
 | ORDER BY | Para ordenar los registros selecciones en un orden específico |
 
-
-__Operadores__, lógicos y de comparación
+**Operadores**, lógicos y de comparación
 
 | Comando | Descripción |
 |---------|-------------|
@@ -78,8 +79,7 @@ __Operadores__, lógicos y de comparación
 | LIKE | Comparación de modelos |
 | IN | Registros incluidos en una tabla |
 
-
-__Funciones de agregado__, se utiliza en las consultas SELECT en grupos de registros para devolver un único valor.
+**Funciones de agregado**, se utiliza en las consultas SELECT en grupos de registros para devolver un único valor.
 
 | Función | Descripción |
 |---------|-------------|
