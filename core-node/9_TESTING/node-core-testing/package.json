@@ -1,0 +1,13 @@
+{
+  "name": "core-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/sum.test.js",
+    "test:coverage": "node src/sum.test.js --experimental-test-coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

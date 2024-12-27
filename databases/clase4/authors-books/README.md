@@ -32,4 +32,4 @@ Es necesario obtener el objeto de conexión creado previamente. Ya que este obje
 
 5. Implementando nuestras funciones y conexión a PostgreSQL
 
-Ahora implementaremos nuestras funciones en el archivo index.js 
+Ahora implementaremos nuestras funciones en el archivo index.js

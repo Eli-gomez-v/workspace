@@ -1,0 +1,11 @@
+
+
+--Notificacion de compras--
+
+Comprado producto con ID #0
+Comprado producto con ID #1
+Comprado producto con ID #2
+Comprado producto con ID #3
+Comprado producto con ID #4
+
+======= Total 5 =======
