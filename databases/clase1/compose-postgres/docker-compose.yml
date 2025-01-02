@@ -1,5 +1,5 @@
 # Eliminada version por generar problemas.
-version: 'version'
+version: '3.8'
 services:
   postgres:
     container_name: postgres_container
@@ -10,11 +10,11 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - "5433:5432"  # Cambia el puerto del host a 5433
+      - "5433:5432" # Cambia el puerto del host a 5433
     networks:
       - postgres
     restart: unless-stopped
-  
+
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
