@@ -13,25 +13,34 @@
     <!-- Header -->
     <header class="mi_id"> 
     <h1>El tiempo en tu ciudad</h1>
-    </header>
+    </header>   
+    <section>
+        <form action="/pagina_que_recibe_datos" method="get">
     <!-- Navigation -->
     <div class="container">
-    <p>Elija su ubicación:</p>
+     <br>   
+    <h2>Elija su ubicación:</h2>
     <input type="search" name="location" id="location" value="Pamplona, es">
     <input type="button" value="check" id="button">
+    <br>
 
 
     <h2>Este es el tiempo actual para <span id="ubicacionPedida"> ...</span></h2>
     <p>La prevision es <span id="prevision">...</span> <img src="#" alt="" id="icono" style="width: 50px;"></p>
     <p> La temperatura es de <span id="temp">...</span> grados.</p>
     <p>La humedad es del <span id="humedad">...</span>%.</p>
+    <p>La latitud es de <span id="latitud">...</span>º</p>
+    <p>La longitud es de <span id="longitud">...</span>º</p>
     <br>
-    <div class="separator"></div>
-    <br> 
-    <footer class="main-footer">
-        Creado y producido por Eli Gómez
+</div>
+        </form>
+</section>
+        
+    
+    <footer>Creado y producido por Eli Gómez
     </footer>
-    </div>
+    
+
 </body>
 
 </html>

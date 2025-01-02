@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple Node.js project with Jest testing",
   "main": "src/index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production",

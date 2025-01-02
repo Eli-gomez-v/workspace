@@ -35,6 +35,8 @@ function responseManager(resp) {
   muestraDesc(resp.weather[0].description);
   muestraTemp(resp.main.temp);
   muestraHumedad(resp.main.humidity);
+  muestraLatitud(resp.coord.lat);
+  muestraLongitud(resp.coord.lon);
 }
 
 /* Funciones auxiliares para cambiar el HTML/CSS */
@@ -68,4 +70,17 @@ function muestraHumedad(hum) {
   // Muestra la humedad relativa en la página HTML
   const elemento = document.getElementById('humedad');
   elemento.innerHTML = hum;
+}
+
+function muestraLatitud(lat) {
+  // Muestra la latitud en la página HTML
+  const elemento = document.getElementById('latitud');
+  elemento.innerHTML = lat;
+
+}
+
+function muestraLongitud(lon) {
+  // Muestra la longitud en la página HTML
+  const elemento = document.getElementById('longitud');
+  elemento.innerHTML = lon;
 }

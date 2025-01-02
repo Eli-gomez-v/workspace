@@ -1,13 +1,14 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
+    background-image: url("../img/summer08-01.jpg");
     background-color: #f0f8ff;
     color: #333;
     text-align: center;
 }
 
 h1, h2 {
-    color: #0066cc;
+    color: #030e1a;
 }
 
 .container {
@@ -54,6 +55,7 @@ button {
 
 button:hover {
     background-color: #0055a3;
+    border: #004080;
 }
 
 button:active {
