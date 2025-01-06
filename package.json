@@ -4,13 +4,14 @@
 
   "version": "1.0.0",
 
-  "description": "Texto fijo para todos los proyectos de mi workspace.",
+  "description": "Welcome to my workspace.",
 
   "main": "index.js",
 
   "scripts": {
 
-    "test": "jest --config jest.config.js"
+    "lint": "eslint .",
+    "test": "jest"
 
   },
 
