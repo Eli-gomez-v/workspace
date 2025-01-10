@@ -34,6 +34,7 @@ coverage/
 # Gatsby files
 .cache/
 public/
+/public/
 
 # Vuepress build output
 .vuepress/dist
@@ -138,3 +139,26 @@ bower_components/
 /snap/
 /ziKo4IRj
 .Proyecto_final_HTML_CSS
+/node_modules/  
+*.log
+*.env
+/clases/
+/plataforma_arte_local/
+/tiempoProyecto/
+/DEPURAR_NODEjs/
+/core-node-eli/
+/demosClaseNpm/
+/DemoClaseStreams/
+/propuesta-proyectos-ejemplos/
+/.zip/
+/.rar/
+/.pdf/
+/img/
+/*.yml
+/ejemplos favicon/
+
+*.png
+*.jpeg
+*.mp4
+*.mp3
+*.jpg
