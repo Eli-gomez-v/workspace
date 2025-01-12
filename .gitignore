@@ -119,26 +119,14 @@ bower_components/
 /.vscode/
 /.wget-hsts
 /.wine/
-/Descargas/
-/Documentos/
-/Imágenes/
-/AGILE/
-/Apuntes_sobre_javascript/
-/COREJAVASCRIPT/
-/ChatGPT_files/
-/Contenedores/
+# Ignorar directorios específicos
 /HTML/
 /PROYECTO-NET/
 /TERMINAL Y GIT/
 /certificado/
 /docker/
-/certificado1.pem
-/clave1.pem
 /common-project-back-front/
 /snap/
-/ziKo4IRj
-.Proyecto_final_HTML_CSS
-/node_modules/  
 /clases/
 /plataforma_arte_local/
 /tiempoProyecto/
@@ -147,15 +135,23 @@ bower_components/
 /demosClaseNpm/
 /DemoClaseStreams/
 /propuesta-proyectos-ejemplos/
-/.zip/
-/.rar/
-/.pdf/
-/img/
-/*.yml
+
+# Ignorar archivos específicos
+/certificado1.pem
+/clave1.pem
+/ziKo4IRj
+.Proyecto_final_HTML_CSS
+/node_modules/  
 /ejemplos favicon/
 
+# Ignorar archivos con extensiones específicas
 *.png
 *.jpeg
 *.mp4
 *.mp3
 *.jpg
+*.yml
+*.zip
+*.rar
+*.pdf
+*.log
