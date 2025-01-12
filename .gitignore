@@ -127,11 +127,11 @@ bower_components/
 /docker/
 /common-project-back-front/
 /snap/
-/database/clase1/
-/database/clase2/
-/database/clase3/
-/database/clase4/
-/database/plataforma_arte_local/
+/databases/clase1/
+/databases/clase2/
+/databases/clase3/
+/databases/clase4/
+/databases/plataforma_arte_local/
 /express/clases/
 /express/base/
 /plataforma_arte_local/
