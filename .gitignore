@@ -127,14 +127,27 @@ bower_components/
 /docker/
 /common-project-back-front/
 /snap/
-/clases/
+/database/clase1/
+/database/clase2/
+/database/clase3/
+/database/clase4/
+/database/plataforma_arte_local/
+/express/clases/
+/express/base/
 /plataforma_arte_local/
 /tiempoProyecto/
 /DEPURAR_NODEjs/
-/core-node-eli/
-/demosClaseNpm/
-/DemoClaseStreams/
-/propuesta-proyectos-ejemplos/
+/core-node/FIRTS-PROYECT-AS-PROGRAMMER/core-node-eli/
+/core-node/FIRTS-PROYECT-AS-PROGRAMMER/demosClaseNpm/
+/core-node/FIRTS-PROYECT-AS-PROGRAMMER/DemoClaseStreams/
+/core-node/FIRTS-PROYECT-AS-PROGRAMMER/propuesta-proyectos-ejemplos/
+/core-node/FIRTS-PROYECT-AS-PROGRAMMER/Repaso-Javascript-esencial/
+/core-node/FIRTS-PROYECT-AS-PROGRAMMER/Streaming-ia-app/
+/core-node/code/
+/core-node/demosClaseNpm/
+/core-node/introduction-exercise/
+/core-node/propuesta-proyectos-ejemplos/
+
 
 # Ignorar archivos específicos
 /certificado1.pem
