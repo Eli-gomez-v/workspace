@@ -1,0 +1,49 @@
+### Obtener todos los estudiantes
+GET http://localhost:3000/students
+
+### Obtener un estudiante por ID
+GET http://localhost:3000/students/1
+
+### Crear un nuevo estudiante (email inválido)
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+  "name": "John",
+  "last_name": "Doe",
+  "date_of_birth": "2000-01-01",
+  "email": "invalid-email"
+}
+
+### Crear un nuevo estudiante (fecha de nacimiento inválida)
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+  "name": "John",
+  "last_name": "Doe",
+  "date_of_birth": "invalid-date",
+  "email": "john.doe@example.com"
+}
+
+### Crear un nuevo estudiante (email duplicado)
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+  "name": "John",
+  "last_name": "Doe",
+  "date_of_birth": "2000-01-01",
+  "email": "john.doe@example.com"
+}
+
+### Crear un nuevo estudiante (datos válidos)
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+  "name": "Jane",
+  "last_name": "Doe",
+  "date_of_birth": "2000-01-01",
+  "email": "jane.doe@example.com"
+}

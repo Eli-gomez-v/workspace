@@ -32,11 +32,6 @@ app.get('/user/:name', (req, res) => {
   res.render('user', { name: req.params.name });
 });
 
-// crear ruta estudent y endpoint con el nombre
-app.get('/student/:id', (req, res) => {
-  res.render('student', { id: req.params.id, title: 'Student' });
-});
-
 // Creo el servidor en el puerto ${port}
 app.listen(port, () => {
   // Se escribe la URL para el acceso al servidor

@@ -5,8 +5,7 @@
 const express = require('express');
 // Creo la aplicación Express
 const app = express();
-// Declaro el puerto de escucha
-const port = 3000;
+const port = 3000; // Declaro el puerto de escucha
 
 // Middlewares de aplicación
 // La función se ejecuta cada vez que la aplicación recibe una solicitud.
@@ -17,11 +16,6 @@ app.use((req, res, next) => {
 
 // Servir archivos estáticos
 app.use('/static', express.static(`${__dirname}/public`));
-// Acceder a:
-// http://localhost:3000/static/css/style.css
-// http://localhost:3000/static/images/veridas.png
-// http://localhost:3000/static/js/alert.js
-// http://localhost:3000/static/hello.html
 
 // La función se ejecuta para cualquier tipo de solicitud HTTP en ruta /user/:id.
 app.use('/user/:id', (req, res, next) => {
@@ -31,14 +25,17 @@ app.use('/user/:id', (req, res, next) => {
 
 /* Subpila de middleware que imprime información de solicitud para cualquier tipo de
 solicitud HTTP en la ruta /user/:id. */
-app.use('/user/:id', (req, res, next) => {
-  console.log('Request URL:', req.originalUrl);
-  next();
-});
-app.use('/user/:id', (req, res, next) => {
-  console.log('Request Type composed:', req.method);
-  next();
-});
+app.use(
+  '/user/:id',
+  (req, res, next) => {
+    console.log('Request URL:', req.originalUrl);
+    next();
+  },
+  (req, res, next) => {
+    console.log('Request Type composed:', req.method);
+    next();
+  },
+);
 
 // La función maneja las solicitudes GET a la ruta /user/:id.
 // eslint-disable-next-line no-unused-vars
@@ -92,7 +89,6 @@ app.get('/student/:id', (req, res, next) => {
   res.send('special');
 });
 
-// ****** JSON, TEXT, URLENCODED ******
 // Declaro los middlewares que quiero usar
 app.use(express.json());
 app.use(express.text());

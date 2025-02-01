@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Usuario</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+  {{> partials/header}}
+  <main>
+    <h1>Editar Usuario</h1>
+    <form action="/users/{{user.id}}/edit" method="post">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="{{user.email}}" required>
+      <label for="type">Tipo:</label>
+      <select id="type" name="type" required>
+        <option value="admin" {{#if (req user.type 'admin')}}selected{{/if}}>Admin</option>
+        <option value="user" {{#if (req user.type 'user')}}selected{{/if}}>User</option>
+      </select>
+      <label for="active">Activo:</label>
+      <input type="checkbox" id="active" name="active" {{#if user.active}}checked{{/if}}>
+      <button type="submit">Guardar</button>
+    </form>
+  </main>
+  {{> partials/footer}}
+</body>
+</html>

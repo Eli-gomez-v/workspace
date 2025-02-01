@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profesores</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+  {{> partials/header}}
+  <main>
+    <h1>Listado de Profesores</h1>
+    <div id="message" style="display:none; color:red;"></div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#teachers}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{dni}}</td>
+            <td>{{name}}</td>
+            <td>{{last_name}}</td>
+            <td>{{date_of_birth}}</td>
+            <td>
+              <button onclick="editTeacher({{id}})">Editar</button>
+              <button onclick="deleteTeacher({{id}})">Eliminar</button>
+              <button onclick="loadStudents({{id}})">Ver Alumnos</button>
+            </td>
+          </tr>
+          <tr id="students-{{id}}" style="display:none;">
+            <td colspan="6">
+              <h3>Alumnos</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                  </tr>
+                </thead>
+                <tbody id="students-list-{{id}}">
+                  <!-- Los alumnos se cargarán aquí -->
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          {{/teachers}}
+        </tbody>
+      </table>
+    </div>
+    <!--Por implementar-->
+    <h2>Crear Profesor</h2>
+    <form action="/api/teachers" method="post">
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" required>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="last_name">Apellido:</label>
+      <input type="text" id="last_name" name="last_name" required>
+      <label for="date_of_birth">Fecha de Nacimiento:</label>
+      <input type="date" id="date_of_birth" name="date_of_birth" required>
+      <button type="submit">Crear</button>
+    </form>
+    <form action="/logout" method="post">
+      <button type="submit">Logout</button>
+    </form>
+    <script src="/scripts/teachers.js"></script>
+  </main>
+  {{> partials/footer}}
+ 
+</body>
+</html>

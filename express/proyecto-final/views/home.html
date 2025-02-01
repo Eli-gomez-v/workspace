@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+  {{> partials/header}}
+  <main>
+    <h1>Bienvenido, {{user.email}}</h1>
+    <p>Tipo de usuario: {{user.type}}</p>
+    {{#teacher}}
+    <h2>Información del Profesor</h2>
+    <p>Nombre: {{teacher.name}} {{teacher.last_name}}</p>
+    <p>DNI: {{teacher.dni}}</p>
+    <p>Fecha de Nacimiento: {{teacher.date_of_birth}}</p>
+    {{/teacher}}
+    {{#users.length}}
+    <h2>Listado de Usuarios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Tipo</th>
+          <th>Activo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#users}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{email}}</td>
+          <td>{{type}}</td>
+          <td>{{active}}</td>
+          <td>
+        </tr>
+        {{/users}}
+      </tbody>
+    </table>
+    {{/users.length}}
+    <form action="/logout" method="post" style="display: inline;">
+      <button type="submit">Logout</button>
+    </form>
+  </main>
+  {{> partials/footer}}
+</body>
+</html>

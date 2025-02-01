@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+  {{> partials/header}}
+  <main>
+    <h1>Listado de Usuarios</h1>
+    <div id="message" style="display:none; color:red;"></div>
+    <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Tipo</th>
+          <th>Activo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#users}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{email}}</td>
+          <td>{{type}}</td>
+          <td>{{active}}</td>
+          <td>
+            <form action="/users/{{id}}" method="get" style="display:inline;">
+              <button type="submit">Editar</button>
+            </form>
+            <form action="/users/{{id}}" method="post" style="display:inline;">
+              <button type="submit">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+        {{/users}}
+      </tbody>
+    </table>
+    </div>
+    <form action="/logout" method="post">
+      <button type="submit">Logout</button>
+    </form>
+  </main>
+  {{> partials/footer}}
+  
+</body>
+</html>
