@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Greeting from './Greeting';
 import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
+import Warning from './Warning';
 
 // Componente funcional LoginControl que maneja el estado de inicio de sesión
 const LoginControl = () => {
@@ -22,6 +23,7 @@ const LoginControl = () => {
     <div>
       {/* Renderiza el componente Greeting y le pasa la prop isLoggedIn */}
       <Greeting isLoggedIn={isLoggedIn} />
+      <Warning warn={isLoggedIn} />
       {/* Renderiza el botón LoginButton si isLoggedIn es false, de lo contrario renderiza LogoutButton */}
       {isLoggedIn ? (
         <LogoutButton onClick={handleLogoutClick} />
