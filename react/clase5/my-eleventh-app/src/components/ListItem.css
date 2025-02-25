@@ -1,0 +1,23 @@
+.list-item {
+    background-color: #f4f4f4;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-item:nth-child(odd) {
+    background-color: #e2e2e2;
+  }
+  
+  .list-item-title {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .list-item-dni,
+  .list-item-dob {
+    margin: 5px 0;
+    color: #666;
+  }

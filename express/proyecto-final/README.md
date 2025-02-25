@@ -1,34 +1,131 @@
-# Proyecto final Express
+# Proyecto final Express y React de DIGITAL BUILDERS SCHOOL
 
 ## Profesor: Fausto López
 
 ## Alumno/a: Elizabteth Gómez
 
-## Descripción del Proyecto
+## Descripción del Proyecto BACKEND
 
-  - Este proyecto es una aplicación web desarrollada con **Express.js**, **Sequelize** y **PostgresQL**.
-  - La aplicación permite gestionar usuarios, profesores y estudiantes, implementando funcionalidades **CRUD** y autenticación meidante **jWT**.
-  - Ademas, he configurado un entorno de desarrollo con **Docker-compose**
+- Este proyecto es una aplicación web desarrollada con **Express.js**, **Sequelize** y **PostgresQL**.
+- La aplicación permite gestionar usuarios, profesores y estudiantes, implementando funcionalidades **CRUD** y autenticación meidante **jWT**.
+- Ademas, he configurado un entorno de desarrollo con **Docker-compose**
+Descripción General del Proyecto
+Digital Builders School es una aplicación web de gestión escolar que permite la administración de usuarios, profesores y estudiantes con diferentes niveles de acceso basados en roles.
+Componentes Principales Desarrollados
+
+### 1. Autenticación
+
+Implementación de login con JWT
+Protección de rutas según roles de usuario
+Manejo de token de autenticación
+Decodificación de token con react-jwt
+
+### 2. Componentes de Interfaz
+
+Login
+Layout principal
+Perfil de usuario
+Listado de usuarios
+Listado de profesores
+Listado de estudiantes
+
+### Tecnologías Utilizadas
+
+React
+React Router
+JWT (react-jwt)
+Tailwind CSS
+Fetch API para comunicación con backend
+
+Funcionalidades Implementadas
+Roles de Usuario
+
+### Admin:
+
+Acceso completo
+Visualizar usuarios
+Visualizar profesores
+Visualizar estudiantes
+
+Teacher:
+
+Ver información personal
+Ver listado de estudiantes propios
+
+Características de Autenticación
+
+Generación de token JWT
+Protección de rutas
+Verificación de rol de usuario
+Gestión de sesión
+
+Arquitectura del Proyecto
+
+Componentes modulares
+Enrutamiento protegido
+Gestión de estado con hooks de React
+Manejo de errores y estados de carga
 
 ## Estructura del Proyecto
 
 ```bash
 .
 ├── app.js
+├── client -2 # Frontend React
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── README.md
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── AuthContext.jsx
+│   │   ├── components
+│   │   │   ├── Layout
+│   │   │   ├── Login
+│   │   │   ├── Profile
+│   │   │   ├── ProtectedRoute
+│   │   │   ├── StudentsList
+│   │   │   ├── Teachers
+│   │   │   └── Users
+│   │   ├── context
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   ├── router.jsx
+│   │   ├── routes
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Logout.jsx
+│   │   │   ├── Students.jsx
+│   │   │   └── Users.jsx
+│   │   ├── services
+│   │   │   └── api.js
+│   │   ├── utils
+│   │   │   └── jwt.js
+│   │   └── views
+│   │       ├── Login
+│   │       ├── Logout
+│   │       ├── Profile
+│   │       ├── Students
+│   │       └── Users
+│   ├── tailwind.config.js
+│   └── vite.config.js
 ├── config
 │   └── config.json
+├── consultas
+│   ├── query.rest
+│   └── query.sh
 ├── docker
 │   └── dev
 │       └── docker-compose.services.yml
-├── ERD.png
-├── jwt-2.io.png
-├── jwt.io.png
 ├── middlewares
 │   ├── auth.js
 │   └── validate.js
 ├── migrations
-│   ├── 20250121095506-create-user.js # Primera migración a implementar
-│   ├── 20250121095508-create-teacher.js # Se pueden migrar conjuntamente las restantes.
+│   ├── 20250121095506-create-user.js
+│   ├── 20250121095508-create-teacher.js
 │   ├── 20250121095509-create-student.js
 │   ├── 20250121095510-create-class.js
 │   └── 20250121095511-create-student-class.js
@@ -39,31 +136,34 @@
 │   ├── student.js
 │   ├── teacher.js
 │   └── user.js
-├── package.json # Seguir los script de ejecución...
+├── package.json
 ├── package-lock.json
 ├── public
+│   ├── images
+│   │   ├── ERD.png
+│   │   └── jwt.io.png
 │   ├── responsive.css
 │   ├── scripts
-│   │   ├── students.js
-│   │   ├── teachers.js
-│   │   └── users.js
+│   │   └── teachers.js
 │   └── styles.css
-├── query.rest # Empezar con la primera y así hasta la última.
-├── query.sh # En mi caso tuve que darle permiso para ejecutar.
 ├── README.md
 ├── repositories
 │   └── students.js
 ├── routers
+│   ├── auth.js
 │   ├── students.js
 │   ├── teachers.js
 │   └── users.js
 ├── seeders
+│   ├── 20250121103748-users.js
 │   ├── 20250121103749-teachers.js
 │   ├── 20250121103751-students.js
 │   ├── 20250121103752-classes.js
-│   ├── 20250121103753-student-classes.js
-│   └── 20250121104537-users.js
+│   └── 20250121103753-student-classes.js
+├── test-connection.js
 └── views
+    ├── admin
+    │   └── home.html
     ├── edit-user.html
     ├── error-login.html
     ├── home.html
@@ -71,64 +171,71 @@
     ├── partials
     │   ├── body.html
     │   ├── footer.html
+    │   ├── header 1.html
     │   └── header.html
     ├── students.html
     ├── teachers.html
+    ├── user
+    │   └── home.html
     └── users.html
 
-14 directories, 48 files
+38 directories, 71 files
 ```
 
-## Instrucciones del Proyecto final:
+## Instrucciones del Proyecto final de Express con Sequelize y Frontend con React
 
 1. Crear un proyecto de Express con SEQUELIZE que tenga 3 tablas:
-  * ○ users:
-    * ■ id: autonumérico
-    * ■ email: de tipo string y único (unique) y no nulo
-    * ■ password: de tipo string y no nulo
-    * ■ type: de tipo string
-    * ■ active: de tipo boolean con valor por defecto true
 
-  * ○ teachers:
-    * ■ id: autonumérico
-    * ■ dni: de tipo string
-    * ■ name: de tipo string
-    * ■ last_name: de tipo string
-    * ■ date_of_birth: de tipo date
-    * ■ user_id: id de un usuario. Relación 1:1
+- ○ users:
+  - ■ id: autonumérico
+  - ■ email: de tipo string y único (unique) y no nulo
+  - ■ password: de tipo string y no nulo
+  - ■ type: de tipo string
+  - ■ active: de tipo boolean con valor por defecto true
 
-  * ○ students:
-    * ■ id: autonumérico
-    * ■ dni: de tipo string
-    * ■ name: de tipo string
-    * ■ last_name: de tipo string
-    * ■ date_of_birth: de tipo date
-    * ■ teacher_id: id de un profesor. Un profesor puede tener varios estudiantes, un estudiante sólo puede
+- ○ teachers:
+  - ■ id: autonumérico
+  - ■ dni: de tipo string
+  - ■ name: de tipo string
+  - ■ last_name: de tipo string
+  - ■ date_of_birth: de tipo date
+  - ■ user_id: id de un usuario. Relación 1:1
+
+- ○ students:
+  - ■ id: autonumérico
+  - ■ dni: de tipo string
+  - ■ name: de tipo string
+  - ■ last_name: de tipo string
+  - ■ date_of_birth: de tipo date
+  - ■ teacher_id: id de un profesor. Un profesor puede tener varios estudiantes, un estudiante sólo puede
 pertenecer a un profesor.
 
 >NOTA:Para las asociaciones revisar estos artículos: Artículo 1, Artículo 2
 
-## Es importante que para iniciar y verificar la app se sigan las instrucciones del archivo Package.json
+## Es importante que para iniciar y verificar la app se sigan las instrucciones del archivo Package.json 
 
-  ### * - INICIAR LA BASE DE DATOS Y HACER LAS MIGRACIONES COMO SE INDICA ABAJO e INICIAR EL PROYECTO.
+### * - INICIAR LA BASE DE DATOS Y HACER LAS MIGRACIONES COMO SE INDICA ABAJO e INICIAR EL PROYECTO
 
   ```bash
+  cd proyecto-final # backend con express y sequelize con base de datos postgres 
   npm install # Para descargar las dependencias del archivo package.json (node_modules)
-  npm run start-services # acceder al localhost:8081 y ver el archivo docker-compose con los datos a introducir y realizar las migraciones.
-  npm run start-dev # Iniciar la aplicación.
+  npm run start-services # acceder a ver en pgAdmin localhost:8081 la base de datos y ver el archivo docker-compose con los datos a introducir y realizar las migraciones.
+  npm run start-dev # Iniciar la aplicación. acceso con nodemon localhost:3000
+  cd proyecto-final/client
+  npm install
+  npm start # Iniciar la aplición con acceso al localhost:5173
 
   ```
 
-## Imágenes del proyecto:
+## Imágenes del proyecto
 
-## Diagrama entidad-relación ERD:
+## Diagrama entidad-relación ERD
 
-![ERD de pgAdmin](/express/proyecto-final/ERD.png)
+![ERD de pgAdmin](proyecto-final/public/images/ERD.png)
 
-## Busque de datos del JWT TOKEN de autenticación:
+## Busque de datos del JWT TOKEN de autenticación
 
-![Consulta TOKEN](/express/proyecto-final/jwt.io.png)
-
+![Consulta TOKEN](proyecto-final/public/images/jwt.io.png)
 
 ```sh
 #!/bin/bash
@@ -173,7 +280,7 @@ chmod +x query.sh # Hace el archivo ejecutable.
 ./query.sh # Ejecutar el archivo y introducir el password del archivo config en para cada consulta.
 ```
 
-### Verificaciones de los Endpoints.
+### Verificaciones de los Endpoints
 
 [Archivo de consultas Rest Client](./query.rest)
 
@@ -208,18 +315,123 @@ curso@video8:~$ curl -X GET http://localhost:3000/jwt -H "Authorization: Bearer 
 > 
 ```
 
-## Concluciones
+docker logs dev-express-db-1
 
-### En conclusión, este proyecto me ha permitido aplicar y consolidar conocimientos sobre el desarrollo de aplicaciones web utilizando Express.js, Sequelize y PostgreSQL.
+```
 
-- A través de la implementación de funcionalidades CRUD, autenticación mediante JWT y la configuración de un entorno de desarrollo con Docker Compose, 
-- He logrado crear una aplicación robusta y escalable. 
-- Además, he podido emplear lo aprendido en **DATABASES** al manejar asociaciones entre modelos, realizar migraciones y seeders, y proteger rutas mediante middlewares de autenticación y autorización. 
-- En este proyecto demuestra mi capacidad de integrar múltiples tecnologías; también la importancia de seguir buenas prácticas de desarrollo y documentación.
+### 6. Asegurarse de que los Servicios de Docker Estén Corriendo
+
+Asegúrate de que los servicios de Docker estén corriendo correctamente.
+
+```sh
+docker ps
+```
+
+### 7. Ejecutar las Migraciones y Seeders
+
+Después de verificar y corregir cualquier problema, intenta ejecutar las migraciones y seeders nuevamente.
+
+```sh
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+```
+
+Con estos pasos, deberías poder resolver el problema de autenticación y migrar la base de datos correctamente. Si aún tienes problemas, verifica los mensajes de error en la consola para obtener más pistas sobre lo que podría estar mal.docker logs dev-express-db-1
+
+```
+
+### 6. Asegurarse de que los Servicios de Docker Estén Corriendo y verifica las variables de entorno
+
+```javascript
+{
+  "development": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "express-db-egomez",
+    "host": "127.0.0.1",
+    "port": 5433,  // Asegúrate de que el puerto coincida con el puerto externo en docker-compose.services.yml
+    "dialect": "postgres"
+  }
+}
+```
+
+Asegúrate de que los servicios de Docker estén corriendo correctamente.
+
+```sh
+docker ps
+```
+
+### 7. Ejecutar las Migraciones y Seeders
+
+Después de verificar y corregir cualquier problema, intenta ejecutar las migraciones y seeders nuevamente.
+
+```sh
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+```
+
+Con estos pasos, deberías poder resolver el problema de autenticación y migrar la base de datos correctamente. Si aún tienes problemas, verifica los mensajes de error en la consola para obtener más pistas sobre lo que podría estar mal.
+
+## Conclusiones
+
+En conclusión, este proyecto me ha permitido aplicar y consolidar conocimientos sobre el desarrollo de aplicaciones web utilizando Express.js, Sequelize y PostgreSQL
+
+- A través de la implementación de funcionalidades CRUD, autenticación mediante JWT y la configuración de un entorno de desarrollo con Docker Compose,
+- He logrado crear una aplicación robusta y escalable.
+- Además, he podido emplear lo aprendido en **DATABASES** al manejar asociaciones entre modelos, realizar migraciones y seeders, y proteger rutas mediante middlewares de autenticación y autorización.
+- En el proyecto demuestro mi interés y capacidad de integrar múltiples tecnologías; también la importancia de seguir buenas prácticas de desarrollo y documentación.
+- Los puntos abajo señalados de Fortalezas han sido un reto y me he esforzado en realizar sobre mi proyecto las mejoras sugeridas por el profesor a fin de conseguir un conocimiento más seguro y estable de la estructura, compleja, de una api.
+
+### Fortalezas
+
+Arquitectura modular y escalable
+Implementación robusta de autenticación
+Separación clara de responsabilidades
+Diseño responsivo con Tailwind CSS
+Manejo de diferentes roles de usuario
+
+Desafíos Superados
+
+Implementación de autenticación JWT
+Protección de rutas basada en roles
+Manejo de estados de carga y error
+Comunicación efectiva con backend
+
+## Por Mejorar
+
+### 1. Seguridad
+
+Implementar refresh tokens
+Añadir protección contra ataques CSRF
+Mejorar manejo de errores de autenticación
+Añadir validación de formularios más robusta
+
+### 2. Funcionalidad
+
+Implementar sistema de registro de usuarios
+Añadir funcionalidad de recuperación de contraseña
+Crear vistas de edición para perfiles
+Implementar paginación en listados
+Añadir filtros y búsqueda en listados
+
+### 3. Experiencia de Usuario
+
+Mejorar mensajes de error
+Añadir animaciones de carga
+Implementar notificaciones
+Mejorar diseño responsivo
+Añadir tema oscuro
+
+### 4. Rendimiento
+
+Implementar lazy loading de componentes
+Optimizar llamadas a API
+Añadir caché de datos
+Implementar suspense y error boundaries
 
 >NOTA: Agradezco al profesor Fausto López por su guía y apoyo durante el curso, y espero seguir mejorando y aplicando estos conocimientos en futuros proyectos.
 
 ## Bibliografía
 
-* Documentación de Express.js: <https://expressjs.com/>
-* Documentación de PostgreSQL: <https://www.postgresql.org/docs/>
+- Documentación de Express.js: <https://expressjs.com/>
+- Documentación de PostgreSQL: <https://www.postgresql.org/docs/>

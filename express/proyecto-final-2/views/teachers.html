@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profesores</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+<body>
+  {{> partials/header}}
+  <main>
+    <h1>Teachers List</h1>
+    <div id="message" style="display:none; color:red;"></div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>DNI</th>
+            <th>Name</th>
+            <th>Adress</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#teachers}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{dni}}</td>
+            <td>{{name}}</td>
+            <td>{{last_name}}</td>
+            <td>{{date_of_birth}}</td>
+            <td>
+              <button onclick="loadStudents({{id}})">Ver Alumnos</button>
+            </td>
+          </tr>
+          <tr id="students-{{id}}" style="display:none;">
+            <td colspan="6">
+              <h3>Students</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha de Nacimiento</th>
+                  </tr>
+                </thead>
+                <tbody id="students-list-{{id}}">
+                  <!-- Los alumnos se cargarán aquí -->
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          {{/teachers}}
+        </tbody>
+      </table>
+    </div>
+    <!--Por implementar-->
+    <h1>Create Teacher</h1>
+  <form id="create-teacher-form" action="/teachers" method="POST">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="last_name">Last Name:</label>
+      <input type="text" id="last_name" name="last_name" required>
+    </div>
+    <div>
+      <label for="dni">DNI:</label>
+      <input type="text" id="dni" name="dni" required>
+    </div>
+    <div>
+      <label for="date_of_birth">Date of Birth:</label>
+      <input type="date" id="date_of_birth" name="date_of_birth" required>
+    </div>
+    <div>
+      <label for="user_id">User ID:</label>
+      <input type="number" id="user_id" name="user_id" required>
+    </div>
+    <button type="submit">Create</button>
+  </form>
+  </main>
+  {{> partials/footer}}
+  <script src = "/scripts/teachers.js"></script>
+</body>
+</html>

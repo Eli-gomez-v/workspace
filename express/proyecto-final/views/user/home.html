@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Home</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+{{> partials/header}}
+<body>
+    <nav>
+      <ul>
+        <li><a href="/user/home">Home</a></li>
+        <li><a href="/teachers">Teachers</a></li>
+        <li><a href="/students">Students</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Welcome, {{user.email}}</h1>
+    <h2>Teacher: {{teacher.name}} {{teacher.last_name}}</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>DNI</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#students}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{dni}}</td>
+              <td>{{date_of_birth}}</td>
+            </tr>
+          {{/students}}
+        </tbody>
+      </table>
+    </div>
+  </main>
+    {{> partials/footer}}
+</body>
+</html>

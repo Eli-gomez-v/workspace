@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Home</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/responsive.css">
+</head>
+{{> partials/header}}
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/admin/home">Home</a></li>
+        <li><a href="/teachers">Teachers</a></li>
+        <li><a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Welcome, {{user.email}}</h1>
+    <h2>Users</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#users}}
+            <tr>
+              <td>{{email}}</td>
+              <td>{{type}}</td>
+            </tr>
+          {{/users}}
+        </tbody>
+      </table>
+    </div>
+  </main>
+  {{> partials/footer}}
+  <form id="logout-form" action="/logout" method="POST" style="display: none;">
+    <input type="hidden" name="_method" value="POST">
+  </form>
+</body>
+</html>
