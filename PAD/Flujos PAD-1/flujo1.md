@@ -1,7 +1,7 @@
-# Flujo 1: Proceso de Carga de Datos NASTAT
+# Flujo 1: Proceso de Carga de Datos PAD
 
 ## Descripción
-Este flujo automatiza el proceso de extracción, transformación y carga de datos para el sistema NASTAT. Incluye la conexión a diversas fuentes, procesamiento de archivos y actualización de la base de datos.
+Este flujo automatiza el proceso de extracción, transformación y carga de datos para el sistema "PAD". Incluye la conexión a diversas fuentes, procesamiento de archivos y actualización de la base de datos.
 
 ## Implementación en Power Automate Desktop
 
@@ -10,12 +10,12 @@ Este flujo automatiza el proceso de extracción, transformación y carga de dato
 Acción: Inicializar variable
     Nombre: rutaOrigen
     Tipo: Texto
-    Valor: "C:\Datos\NASTAT\origen"
+    Valor: "C:\Datos\PAD\origen"
 
 Acción: Inicializar variable
     Nombre: rutaDestino 
     Tipo: Texto
-    Valor: "C:\Datos\NASTAT\procesados"
+    Valor: "C:\Datos\PAD\procesados"
 
 Acción: Inicializar variable
     Nombre: fechaActual
@@ -51,7 +51,7 @@ Acción: Si carpeta existe
 
 # Conexión al servidor de origen
 Acción: Establecer conexión FTP
-    Servidor: "ftp.datos-nastat.com"
+    Servidor: "ftp.datos-pad.com"
     Puerto: 21
     Nombre de usuario: "%ftpUsuario%"
     Contraseña: "%ftpPassword%"
@@ -122,7 +122,7 @@ Acción: Para cada
                 
                 # Registrar en base de datos
                 Acción: Conectar a base de datos SQL
-                    Cadena de conexión: "Server=servidor-sql;Database=NASTAT_DB;User Id=usuario;Password=contraseña;"
+                    Cadena de conexión: "Server=servidor-sql;Database=PAD_DB;User Id=usuario;Password=contraseña;"
                     Asignar conexión a variable: conexionSQL
                 
                 Acción: Ejecutar consulta SQL
